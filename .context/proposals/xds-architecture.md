@@ -1171,6 +1171,8 @@ This provides tw-classed ergonomics without exposed CSS classes.
 - `ai-trajectory-predictions.md` — Why constraints matter long-term
 - `required-props-pattern.md` — Explicit APIs for AI
 - `distribution-methods.md` — How themes will be distributed
+- `stylex-patterns.md` — StyleX usage patterns, challenges, and workarounds (e.g., `backgroundImage` for overlay effects)
+- `component-swizzling.md` — How customized components could be distributed alongside themes
 
 ---
 

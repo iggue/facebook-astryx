@@ -8,13 +8,8 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'ghost'],
+      options: ['primary', 'secondary', 'ghost', 'destructive'],
       description: 'Visual style variant',
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg'],
-      description: 'Button size',
     },
     loading: {
       control: 'boolean',
@@ -33,7 +28,6 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    size: 'md',
     children: 'Primary Button',
   },
 };
@@ -41,7 +35,6 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    size: 'md',
     children: 'Secondary Button',
   },
 };
@@ -49,15 +42,20 @@ export const Secondary: Story = {
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
-    size: 'md',
     children: 'Ghost Button',
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    children: 'Delete',
   },
 };
 
 export const Loading: Story = {
   args: {
     variant: 'primary',
-    size: 'md',
     loading: true,
     children: 'Loading...',
   },
@@ -66,20 +64,9 @@ export const Loading: Story = {
 export const Disabled: Story = {
   args: {
     variant: 'primary',
-    size: 'md',
     disabled: true,
     children: 'Disabled',
   },
-};
-
-export const Sizes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-    </div>
-  ),
 };
 
 export const AllVariants: Story = {
@@ -89,16 +76,19 @@ export const AllVariants: Story = {
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Destructive</Button>
       </div>
       <div style={{ display: 'flex', gap: '12px' }}>
         <Button variant="primary" loading>Loading...</Button>
         <Button variant="secondary" loading>Loading...</Button>
         <Button variant="ghost" loading>Loading...</Button>
+        <Button variant="destructive" loading>Loading...</Button>
       </div>
       <div style={{ display: 'flex', gap: '12px' }}>
         <Button variant="primary" disabled>Disabled</Button>
         <Button variant="secondary" disabled>Disabled</Button>
         <Button variant="ghost" disabled>Disabled</Button>
+        <Button variant="destructive" disabled>Disabled</Button>
       </div>
     </div>
   ),

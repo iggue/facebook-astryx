@@ -1,21 +1,34 @@
 /**
- * XDS Pre-defined Themes
+ * XDS Default Theme
  *
- * Uses CSS light-dark() function for automatic light/dark mode switching.
- * The browser picks the appropriate value based on the color-scheme property.
+ * A complete theme template that can be copied and customized.
+ * Uses CSS light-dark() for automatic light/dark mode switching.
+ *
+ * To create a custom theme:
+ * 1. Copy this file
+ * 2. Rename it (e.g., myBrandTheme.stylex.ts)
+ * 3. Update the values with your brand colors/spacing
+ * 4. Export from index.ts
  */
 
 import * as stylex from '@stylexjs/stylex';
 import {
   colorTokens,
   elevationTokens,
+  spacingTokens,
+  radiusTokens,
+  transitionTokens,
+  typographyTokens,
 } from './tokens.stylex';
+import type { Theme } from './types';
 
-/**
- * Color theme with light-dark() values
- * Automatically adapts based on color-scheme CSS property
- */
-export const colorTheme = stylex.createTheme(colorTokens, {
+// =============================================================================
+// Color Theme
+// =============================================================================
+// Override tokens with light-dark() values for automatic mode switching.
+// Format: 'light-dark(lightValue, darkValue)'
+
+const colorTheme = stylex.createTheme(colorTokens, {
   // Core semantic
   accent: 'light-dark(#0064E0, #2694FE)',
   accentDeemphasized: 'light-dark(#0082FB33, #0082FB3F)',
@@ -128,19 +141,78 @@ export const colorTheme = stylex.createTheme(colorTokens, {
   yellowText: 'light-dark(#F57F17, #FFF9C4)',
 });
 
-/**
- * Elevation theme with light-dark() values
- */
-export const elevationTheme = stylex.createTheme(elevationTokens, {
+// =============================================================================
+// Elevation Theme
+// =============================================================================
+
+const elevationTheme = stylex.createTheme(elevationTokens, {
   base: 'light-dark(0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px #111112)',
   thumb: 'light-dark(0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.4))',
-  dialog: 'light-dark(0px 2px 2px rgba(0, 0, 0, 0.1) 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.2) 0px 8px 24px rgba(0, 0, 0, 0.3))',
-  hover: 'light-dark(0px 1px 2px rgba(0, 0, 0, 0.1) 0px 2px 12px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2) 0px 2px 12px rgba(0, 0, 0, 0.2))',
+  dialog:
+    'light-dark(0px 2px 2px rgba(0, 0, 0, 0.1) 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.2) 0px 8px 24px rgba(0, 0, 0, 0.3))',
+  hover:
+    'light-dark(0px 1px 2px rgba(0, 0, 0, 0.1) 0px 2px 12px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.2) 0px 2px 12px rgba(0, 0, 0, 0.2))',
   menu: 'light-dark(0px 1px 1px rgba(0, 0, 0, 0.1) 0px 2px 8px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.2) 0px 2px 8px rgba(0, 0, 0, 0.2))',
 });
 
-// Legacy exports for backwards compatibility
-export const lightTheme = colorTheme;
-export const darkTheme = colorTheme;
-export const lightElevationTheme = elevationTheme;
-export const darkElevationTheme = elevationTheme;
+// =============================================================================
+// Spacing Theme
+// =============================================================================
+
+const spacingTheme = stylex.createTheme(spacingTokens, {
+  space0: '0px',
+  space0_5: '2px',
+  space1: '4px',
+  space2: '8px',
+  space3: '12px',
+  space4: '16px',
+  space5: '20px',
+  space6: '24px',
+  space7: '32px',
+});
+
+// =============================================================================
+// Radius Theme
+// =============================================================================
+
+const radiusTheme = stylex.createTheme(radiusTokens, {
+  rounded: '9999px',
+  container: '12px',
+  element: '8px',
+  content: '4px',
+});
+
+// =============================================================================
+// Transition Theme
+// =============================================================================
+
+const transitionTheme = stylex.createTheme(transitionTokens, {
+  fast: '0.15s ease',
+  normal: '0.2s ease',
+});
+
+// =============================================================================
+// Typography Theme
+// =============================================================================
+
+const typographyTheme = stylex.createTheme(typographyTokens, {
+  fontFamilyBody:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  fontFamilyCode: '"SF Mono", Monaco, Consolas, monospace',
+  fontFamilyHeading:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+});
+
+// =============================================================================
+// Theme Export
+// =============================================================================
+
+export const defaultTheme: Theme = {
+  name: 'default',
+  colorTheme,
+  elevationTheme,
+  spacingTheme,
+  radiusTheme,
+  transitionTheme,
+  typographyTheme,
+};

@@ -19,6 +19,7 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import * as stylex from '@stylexjs/stylex';
 import type { Theme as ThemeType, ThemeMode } from './types';
+import { publicVariables } from './publicVariables.stylex';
 
 /**
  * Theme context value
@@ -72,17 +73,6 @@ const wrapperStyles = stylex.create({
 });
 
 /**
- * Convert runtime overrides to CSS style object
- */
-function overridesToStyle(overrides: Record<string, string>): React.CSSProperties {
-  const style: Record<string, string> = {};
-  for (const [varName, value] of Object.entries(overrides)) {
-    style[varName] = value;
-  }
-  return style as React.CSSProperties;
-}
-
-/**
  * Theme provider component
  *
  * Applies StyleX theme variables and sets color-scheme for light-dark() to work.
@@ -97,35 +87,30 @@ export function Theme({
 
   // Get the color-scheme style based on mode
   const colorSchemeStyle =
-    mode === 'dark' ? wrapperStyles.dark :
-    mode === 'light' ? wrapperStyles.light :
-    wrapperStyles.system;
+    mode === 'dark'
+      ? wrapperStyles.dark
+      : mode === 'light'
+        ? wrapperStyles.light
+        : wrapperStyles.system;
 
   // Get StyleX props for all theme styles
   const stylexProps = stylex.props(
     wrapperStyles.base,
     colorSchemeStyle,
+    publicVariables.all,
     theme.colorTheme,
-    theme.elevationTheme
+    theme.elevationTheme,
+    theme.spacingTheme,
+    theme.radiusTheme,
+    theme.transitionTheme,
+    theme.typographyTheme
   );
-
-  // Convert runtime overrides to inline styles
-  const overrideStyles = useMemo(
-    () => overridesToStyle(theme.overrides),
-    [theme.overrides]
-  );
-
-  // Merge StyleX styles with runtime overrides
-  const mergedStyle = {
-    ...stylexProps.style,
-    ...overrideStyles,
-  };
 
   return (
     <ThemeContext.Provider value={contextValue}>
       <div
         className={stylexProps.className}
-        style={mergedStyle}
+        style={stylexProps.style}
         data-theme={mode === 'system' ? undefined : mode}
       >
         {children}

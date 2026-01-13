@@ -1,13 +1,13 @@
 import type { Preview, Decorator } from '@storybook/react';
 import * as React from 'react';
-import { Theme, defaultTheme, shadcnTheme } from '@xds/core';
+import { Theme, defaultTheme, neutralTheme } from '@xds/core';
 
 /**
  * Map of available themes
  */
 const themes = {
   default: defaultTheme,
-  shadcn: shadcnTheme,
+  neutral: neutralTheme,
 };
 
 /**
@@ -23,7 +23,14 @@ const withXDSTheme: Decorator = (Story, context) => {
 
   return (
     <Theme theme={theme} mode={mode}>
-      <Story />
+      <div
+        style={{
+          backgroundColor: 'var(--xds-surface)',
+          padding: 16,
+        }}
+      >
+        <Story />
+      </div>
     </Theme>
   );
 };
@@ -39,6 +46,7 @@ const preview: Preview = {
     backgrounds: {
       disable: true, // Disable backgrounds addon, use theme instead
     },
+    layout: 'fullscreen',
   },
   globalTypes: {
     xdsTheme: {
@@ -48,7 +56,7 @@ const preview: Preview = {
         icon: 'paintbrush',
         items: [
           { value: 'default', title: 'Default', icon: 'circlehollow' },
-          { value: 'shadcn', title: 'Shadcn', icon: 'circle' },
+          { value: 'neutral', title: 'Neutral', icon: 'circle' },
         ],
         dynamicTitle: true,
       },
