@@ -298,11 +298,23 @@
       "import": "./dist/Token/index.mjs",
       "require": "./dist/Token/index.js"
     },
+    "./Tokenizer": {
+      "source": "./src/Tokenizer/index.ts",
+      "types": "./dist/Tokenizer/index.d.ts",
+      "import": "./dist/Tokenizer/index.mjs",
+      "require": "./dist/Tokenizer/index.js"
+    },
     "./TopNav": {
       "source": "./src/TopNav/index.ts",
       "types": "./dist/TopNav/index.d.ts",
       "import": "./dist/TopNav/index.mjs",
       "require": "./dist/TopNav/index.js"
+    },
+    "./Typeahead": {
+      "source": "./src/Typeahead/index.ts",
+      "types": "./dist/Typeahead/index.d.ts",
+      "import": "./dist/Typeahead/index.mjs",
+      "require": "./dist/Typeahead/index.js"
     },
     "./hooks": {
       "source": "./src/hooks/index.ts",
