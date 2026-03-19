@@ -23,7 +23,7 @@ export const brutalistTheme = defineTheme({
   tokens: {
     // Colors — high contrast, no subtlety
     '--color-accent': ['#FF1493', '#FF69B4'],
-    '--color-accent-deemphasized': ['#FF149333', '#FF69B43F'],
+    '--color-accent-muted': ['#FF149333', '#FF69B43F'],
     '--color-surface': ['#FFFFFF', '#000000'],
     '--color-wash': ['#F5F5F5', '#111111'],
     '--color-card': ['#FFFFFF', '#000000'],

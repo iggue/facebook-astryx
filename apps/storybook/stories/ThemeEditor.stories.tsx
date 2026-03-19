@@ -34,7 +34,7 @@ import {
   sizeDefaults,
   shadowDefaults,
   durationDefaults,
-  easingDefaults,
+  easeDefaults,
   transitionDefaults,
 } from '@xds/core/theme';
 import {defaultIconRegistry} from '@xds/theme-default';
@@ -88,7 +88,7 @@ const TOKEN_GROUPS = {
   easing: {
     label: 'Easing',
     description: 'Motion easing tokens',
-    tokens: easingDefaults,
+    tokens: easeDefaults,
   },
 } as const;
 
@@ -101,58 +101,51 @@ type TokenGroupKey = keyof typeof TOKEN_GROUPS;
 const COLOR_CATEGORIES = {
   'Core Semantic': [
     '--color-accent',
-    '--color-accent-deemphasized',
-    '--color-accent-text',
+    '--color-accent-muted',
+    '--color-secondary',
     '--color-surface',
     '--color-wash',
     '--color-overlay',
   ],
   'Interactive States': [
-    '--color-hover-overlay',
-    '--color-pressed-overlay',
-    '--color-focus-outline',
-    '--color-focus-outline-error',
-    '--color-focus-outline-success',
-    '--color-focus-outline-warning',
-    '--color-deemphasized',
+    '--color-overlay-hover',
+    '--color-overlay-pressed',
+    '--color-ring-focus',
+    '--color-ring-focus-error',
+    '--color-ring-focus-success',
+    '--color-ring-focus-warning',
+    '--color-muted',
   ],
   Text: [
     '--color-text-primary',
     '--color-text-secondary',
     '--color-text-disabled',
     '--color-text-link',
-    '--color-text-placeholder',
-    '--color-text-on-media',
+    '--color-text-on-dark-media',
   ],
   Icon: [
     '--color-icon-primary',
     '--color-icon-secondary',
-    '--color-icon-tertiary',
     '--color-icon-disabled',
-    '--color-icon-on-media',
+    '--color-icon-on-dark-media',
   ],
   'Surface Variants': ['--color-card', '--color-popover', '--color-navbar'],
   'Status/Sentiment': [
-    '--color-positive',
-    '--color-positive-deemphasized',
-    '--color-negative',
-    '--color-negative-deemphasized',
+    '--color-success',
+    '--color-success-muted',
+    '--color-error',
+    '--color-error-muted',
     '--color-warning',
-    '--color-warning-deemphasized',
-    '--color-educational',
-    '--color-educational-deemphasized',
+    '--color-warning-muted',
+    '--color-info',
+    '--color-info-muted',
   ],
   Divider: [
-    '--color-divider',
-    '--color-divider-high-contrast',
-    '--color-divider-emphasized',
+    '--color-border',
+    '--color-border-strong',
+    '--color-border-emphasized',
   ],
-  Effects: [
-    '--color-glimmer',
-    '--color-glimmer-high-contrast',
-    '--color-shadow-elevation',
-    '--color-hover-tint',
-  ],
+  Effects: ['--color-skeleton', '--color-shadow', '--color-hover-tint'],
   'Palette: Blue': [
     '--color-blue-background',
     '--color-blue-border',
@@ -452,7 +445,7 @@ function ColorSwatch({tokenName, value, onChange, mode}: ColorSwatchProps) {
           height: '32px',
           borderRadius: '6px',
           backgroundColor: displayValue,
-          border: '1px solid var(--color-divider-emphasized)',
+          border: '1px solid var(--color-border-emphasized)',
           flexShrink: 0,
           // Checkerboard pattern for alpha preview
           backgroundImage:
@@ -522,7 +515,7 @@ function ColorSwatch({tokenName, value, onChange, mode}: ColorSwatchProps) {
                 padding: '4px 6px',
                 fontSize: '12px',
                 fontFamily: 'var(--font-code)',
-                border: '1px solid var(--color-divider-emphasized)',
+                border: '1px solid var(--color-border-emphasized)',
                 borderRadius: '4px',
                 backgroundColor: 'var(--color-surface)',
                 color: 'var(--color-text-primary)',
@@ -554,7 +547,7 @@ function ColorSwatch({tokenName, value, onChange, mode}: ColorSwatchProps) {
             padding: '4px 8px',
             fontSize: '12px',
             fontFamily: 'var(--font-code)',
-            border: '1px solid var(--color-divider-emphasized)',
+            border: '1px solid var(--color-border-emphasized)',
             borderRadius: '4px',
             backgroundColor: 'var(--color-surface)',
             color: 'var(--color-text-primary)',
@@ -621,7 +614,7 @@ function SpacingEditor({tokenName, value, onChange}: SpacingEditorProps) {
           padding: '4px 8px',
           fontSize: '12px',
           fontFamily: 'var(--font-code)',
-          border: '1px solid var(--color-divider-emphasized)',
+          border: '1px solid var(--color-border-emphasized)',
           borderRadius: '4px',
           backgroundColor: 'var(--color-surface)',
           color: 'var(--color-text-primary)',
@@ -685,7 +678,7 @@ function RadiusEditor({tokenName, value, onChange}: RadiusEditorProps) {
           padding: '4px 8px',
           fontSize: '12px',
           fontFamily: 'var(--font-code)',
-          border: '1px solid var(--color-divider-emphasized)',
+          border: '1px solid var(--color-border-emphasized)',
           borderRadius: '4px',
           backgroundColor: 'var(--color-surface)',
           color: 'var(--color-text-primary)',
@@ -761,7 +754,7 @@ function TypographyEditor({tokenName, value, onChange}: TypographyEditorProps) {
           padding: '4px 8px',
           fontSize: '12px',
           fontFamily: 'var(--font-code)',
-          border: '1px solid var(--color-divider-emphasized)',
+          border: '1px solid var(--color-border-emphasized)',
           borderRadius: '4px',
           backgroundColor: 'var(--color-surface)',
           color: 'var(--color-text-primary)',
@@ -874,7 +867,7 @@ function ComponentPreview() {
                 padding: '16px',
                 borderRadius: 'var(--radius-2)',
                 backgroundColor: 'var(--color-wash)',
-                border: '1px solid var(--color-divider)',
+                border: '1px solid var(--color-border)',
                 fontFamily: 'var(--font-code)',
                 fontSize: 'var(--text-sm)',
                 lineHeight: 'var(--leading-normal)',
@@ -897,7 +890,7 @@ const styles = stylex.create({
 const styles = stylex.create({
   button: {
     backgroundColor: colorVars['--color-accent'],
-    color: colorVars['--color-text-on-media'],
+    color: colorVars['--color-text-on-dark-media'],
   },
 });`}
               </code>
@@ -1322,7 +1315,7 @@ function ThemeEditorComponent() {
       ...sizeDefaults,
       ...shadowDefaults,
       ...durationDefaults,
-      ...easingDefaults,
+      ...easeDefaults,
       ...transitionDefaults,
     }),
     [],
@@ -1569,7 +1562,7 @@ function ThemeEditorComponent() {
             style={{
               padding: '8px 12px',
               borderRadius: '6px',
-              border: '1px solid var(--color-divider)',
+              border: '1px solid var(--color-border)',
               backgroundColor: 'var(--color-surface)',
               display: 'flex',
               flexDirection: 'column',
@@ -1697,7 +1690,7 @@ function ThemeEditorComponent() {
                 padding: '16px',
                 borderRadius: '8px',
                 backgroundColor: 'var(--color-wash)',
-                border: '1px solid var(--color-divider)',
+                border: '1px solid var(--color-border)',
                 marginBottom: '8px',
               }}>
               <div
@@ -1769,7 +1762,7 @@ function ThemeEditorComponent() {
                 padding: '4px 8px',
                 fontSize: '12px',
                 fontFamily: 'var(--font-code)',
-                border: '1px solid var(--color-divider-emphasized)',
+                border: '1px solid var(--color-border-emphasized)',
                 borderRadius: '4px',
                 backgroundColor: 'var(--color-surface)',
                 color: 'var(--color-text-primary)',
@@ -1794,7 +1787,7 @@ function ThemeEditorComponent() {
       <div
         style={{
           width: '400px',
-          borderRight: '1px solid var(--color-divider-emphasized)',
+          borderRight: '1px solid var(--color-border-emphasized)',
           display: 'flex',
           flexDirection: 'column',
           backgroundColor: 'var(--color-surface)',
@@ -1803,7 +1796,7 @@ function ThemeEditorComponent() {
         <div
           style={{
             padding: '16px 16px 12px',
-            borderBottom: '1px solid var(--color-divider)',
+            borderBottom: '1px solid var(--color-border)',
             display: 'flex',
             gap: '4px',
             flexWrap: 'wrap',
@@ -1823,7 +1816,7 @@ function ThemeEditorComponent() {
         <div
           style={{
             padding: '12px 16px',
-            borderBottom: '1px solid var(--color-divider)',
+            borderBottom: '1px solid var(--color-border)',
           }}>
           <XDSText type="supporting">
             {TOKEN_GROUPS[activeGroup].description}
@@ -1844,7 +1837,7 @@ function ThemeEditorComponent() {
         <div
           style={{
             padding: '16px',
-            borderTop: '1px solid var(--color-divider)',
+            borderTop: '1px solid var(--color-border)',
             display: 'flex',
             gap: '8px',
           }}>
@@ -1869,7 +1862,7 @@ function ThemeEditorComponent() {
         <div
           style={{
             padding: '12px 24px',
-            borderBottom: '1px solid var(--color-divider)',
+            borderBottom: '1px solid var(--color-border)',
             backgroundColor: 'var(--color-surface)',
             display: 'flex',
             alignItems: 'center',
@@ -1897,7 +1890,7 @@ function ThemeEditorComponent() {
           <div
             style={{
               padding: '16px 24px',
-              borderBottom: '1px solid var(--color-divider)',
+              borderBottom: '1px solid var(--color-border)',
               backgroundColor: 'var(--color-wash)',
               maxHeight: '300px',
               overflow: 'auto',
@@ -1912,7 +1905,7 @@ function ThemeEditorComponent() {
                 padding: '16px',
                 borderRadius: '8px',
                 backgroundColor: 'var(--color-surface)',
-                border: '1px solid var(--color-divider-emphasized)',
+                border: '1px solid var(--color-border-emphasized)',
                 fontSize: '12px',
                 fontFamily: 'var(--font-code)',
                 overflow: 'auto',

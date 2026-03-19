@@ -41,7 +41,7 @@ import {
   spacingVars,
   radiusVars,
   durationVars,
-  easingVars,
+  easeVars,
   typographyVars,
   textSizeVars,
 } from '../theme/tokens.stylex';
@@ -59,11 +59,11 @@ const styles = stylex.create({
     padding: spacingVars['--spacing-1'],
     borderRadius: radiusVars['--radius-2'],
     backgroundColor: colorVars['--color-surface'],
-    boxShadow: `0 4px 12px ${colorVars['--color-shadow-elevation']}`,
+    boxShadow: `0 4px 12px ${colorVars['--color-shadow']}`,
     opacity: 1,
     transitionProperty: 'opacity',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   popover: {
     minWidth: '160px',
@@ -96,7 +96,7 @@ const styles = stylex.create({
     outline: 'none',
   },
   itemHighlighted: {
-    backgroundColor: colorVars['--color-hover-overlay'],
+    backgroundColor: colorVars['--color-overlay-hover'],
   },
   itemDisabled: {
     opacity: 0.5,

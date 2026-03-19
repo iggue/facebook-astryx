@@ -38,7 +38,7 @@ import {
   radiusVars,
   shadowVars,
   durationVars,
-  easingVars,
+  easeVars,
   typographyVars,
   textSizeVars,
   fontWeightVars,
@@ -71,9 +71,9 @@ const styles = stylex.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: {
-      default: colorVars['--color-divider-emphasized'],
+      default: colorVars['--color-border-emphasized'],
       ':hover': {
-        '@media (hover: hover)': colorVars['--color-divider-high-contrast'],
+        '@media (hover: hover)': colorVars['--color-border-strong'],
       },
     },
     borderRadius: radiusVars['--radius-2'],
@@ -85,26 +85,26 @@ const styles = stylex.create({
     cursor: 'pointer',
     transitionProperty: 'border-color, outline, box-shadow',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     boxShadow: {
       default: 'none',
       ':hover': {
-        '@media (hover: hover)': shadowVars['--insetshadow-border-hover'],
+        '@media (hover: hover)': shadowVars['--inset-shadow-border-hover'],
       },
     },
     outline: {
       default: 'none',
-      ':focus': `1px solid ${colorVars['--color-focus-outline']}`,
+      ':focus': `1px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: '0',
   },
   triggerDisabled: {
     cursor: 'not-allowed',
     opacity: 0.5,
-    borderColor: colorVars['--color-divider-emphasized'],
+    borderColor: colorVars['--color-border-emphasized'],
   },
   triggerPlaceholder: {
-    color: colorVars['--color-text-placeholder'],
+    color: colorVars['--color-text-secondary'],
   },
   triggerIcon: {
     flexShrink: 0,
@@ -115,7 +115,7 @@ const styles = stylex.create({
     height: 16,
     transitionProperty: 'transform',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     transformOrigin: 'center',
     color: colorVars['--color-icon-secondary'],
   },
@@ -135,7 +135,7 @@ const styles = stylex.create({
     padding: spacingVars['--spacing-1'],
     borderRadius: radiusVars['--radius-2'],
     backgroundColor: colorVars['--color-surface'],
-    boxShadow: `0 4px 12px ${colorVars['--color-shadow-elevation']}`,
+    boxShadow: `0 4px 12px ${colorVars['--color-shadow']}`,
     opacity: 1,
     transition: `opacity ${durationVars['--duration-fast']}`,
   },
@@ -195,7 +195,7 @@ const styles = stylex.create({
     color: colorVars['--color-icon-primary'],
   },
   itemHighlighted: {
-    backgroundColor: colorVars['--color-hover-overlay'],
+    backgroundColor: colorVars['--color-overlay-hover'],
   },
   itemSelected: {
     fontWeight: fontWeightVars['--font-weight-medium'],

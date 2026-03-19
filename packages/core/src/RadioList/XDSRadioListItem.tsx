@@ -20,7 +20,7 @@ import {
   spacingVars,
   textSizeVars,
   durationVars,
-  easingVars,
+  easeVars,
   typographyVars,
   fontWeightVars,
 } from '../theme/tokens.stylex';
@@ -60,14 +60,14 @@ const styles = stylex.create({
     borderRadius: '50%',
     transitionProperty: 'background-color, border-color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     boxSizing: 'border-box',
   },
   radioUnchecked: {
     borderColor: {
-      default: colorVars['--color-divider-emphasized'],
+      default: colorVars['--color-border-emphasized'],
       [stylex.when.ancestor(':hover')]: {
-        '@media (hover: hover)': `color-mix(in srgb, ${colorVars['--color-divider-emphasized']}, ${colorVars['--color-hover-tint']} 20%)`,
+        '@media (hover: hover)': `color-mix(in srgb, ${colorVars['--color-border-emphasized']}, ${colorVars['--color-hover-tint']} 20%)`,
       },
     },
     backgroundColor: {
@@ -94,7 +94,7 @@ const styles = stylex.create({
   radioWrapperFocus: {
     outline: {
       default: 'none',
-      ':focus-within': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-within': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',
@@ -104,14 +104,14 @@ const styles = stylex.create({
   },
   radioDisabled: {
     opacity: 0.5,
-    borderColor: colorVars['--color-divider'],
+    borderColor: colorVars['--color-border'],
   },
   radioDisabledUnchecked: {
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
   },
   innerDot: {
     borderRadius: '50%',
-    backgroundColor: colorVars['--color-icon-on-media'],
+    backgroundColor: colorVars['--color-icon-on-dark-media'],
   },
   labelWrapper: {
     display: 'flex',

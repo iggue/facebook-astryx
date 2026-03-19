@@ -26,7 +26,7 @@ export const colorStyles = stylex.create({
     color: colorVars['--color-text-disabled'],
   },
   placeholder: {
-    color: colorVars['--color-text-placeholder'],
+    color: colorVars['--color-text-secondary'],
   },
   active: {
     color: colorVars['--color-accent'],

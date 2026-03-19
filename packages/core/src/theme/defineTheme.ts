@@ -37,7 +37,7 @@ import {
   radiusDefaults,
   shadowDefaults,
   durationDefaults,
-  easingDefaults,
+  easeDefaults,
   transitionDefaults,
   typographyDefaults,
   textSizeDefaults,
@@ -71,7 +71,7 @@ export type XDSTokenName =
   | keyof typeof radiusDefaults
   | keyof typeof shadowDefaults
   | keyof typeof durationDefaults
-  | keyof typeof easingDefaults
+  | keyof typeof easeDefaults
   | keyof typeof transitionDefaults
   | keyof typeof typographyDefaults
   | keyof typeof textSizeDefaults
@@ -111,7 +111,7 @@ export type XDSStyleOverrides = Record<string, string>;
  *     'variant:destructive+size:sm': { padding: '2px 6px' },
  *   },
  *   badge: {
- *     'variant:ghost': { border: '1px solid var(--color-divider)' },
+ *     'variant:ghost': { border: '1px solid var(--color-border)' },
  *   },
  * }
  * ```
@@ -237,7 +237,7 @@ export const xdsTokenDefaults: Record<string, string> = {
   ...radiusDefaults,
   ...shadowDefaults,
   ...durationDefaults,
-  ...easingDefaults,
+  ...easeDefaults,
   ...transitionDefaults,
   ...typographyDefaults,
   ...textSizeDefaults,
@@ -466,7 +466,7 @@ export function generateThemeRules(theme: XDSDefinedTheme): string[] {
 
   parts.push(`  hr {
     border: none;
-    border-top: 1px solid var(--color-divider);
+    border-top: 1px solid var(--color-border);
   }`);
 
   // 4. Prop-level color overrides (for text/heading/link specificity)
@@ -474,7 +474,7 @@ export function generateThemeRules(theme: XDSDefinedTheme): string[] {
     primary: 'var(--color-text-primary)',
     secondary: 'var(--color-text-secondary)',
     disabled: 'var(--color-text-disabled)',
-    placeholder: 'var(--color-text-placeholder)',
+    placeholder: 'var(--color-text-secondary)',
     active: 'var(--color-accent)',
   };
 

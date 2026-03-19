@@ -242,7 +242,7 @@ const myTheme = defineTheme({
           code: `const cardOverrides = stylex.create({
   container: {
     borderRadius: '20px',
-    background: 'linear-gradient(135deg, var(--color-accent), var(--color-positive))',
+    background: 'linear-gradient(135deg, var(--color-accent), var(--color-success))',
     padding: '2px',
   },
   content: {
