@@ -133,10 +133,10 @@ const myTheme = defineTheme({
   name: 'my-theme',
 
   // Type scale — generates heading and text tokens from base size + ratio
-  typeScale: { base: 14, ratio: 1.2 },
+  typeScale: {base: 14, ratio: 1.2},
 
   // Radius scale — generates radius tokens from base unit + multiplier
-  radiusScale: { base: 4, multiplier: 1 },
+  radiusScale: {base: 4, multiplier: 1},
 
   // Explicit token overrides (highest precedence — overrides scale values)
   tokens: {
@@ -146,7 +146,7 @@ const myTheme = defineTheme({
   // Component-level style overrides
   components: {
     button: {
-      'variant:primary': { color: 'white' },
+      'variant:primary': {color: 'white'},
     },
   },
 });
@@ -154,10 +154,10 @@ const myTheme = defineTheme({
 
 **Scale configs:**
 
-| Config | What it generates | Parameters |
-| --- | --- | --- |
-| `typeScale` | `--heading-*-size/weight/leading`, `--text-*-size/weight/leading` | `base` (px), `ratio`, `weights?` |
-| `radiusScale` | `--radius-0` through `--radius-4`, `--radius-rounded` | `base` (px), `multiplier` (0–2) |
+| Config        | What it generates                                                 | Parameters                       |
+| ------------- | ----------------------------------------------------------------- | -------------------------------- |
+| `typeScale`   | `--heading-*-size/weight/leading`, `--text-*-size/weight/leading` | `base` (px), `ratio`, `weights?` |
+| `radiusScale` | `--radius-0` through `--radius-4`, `--radius-rounded`             | `base` (px), `multiplier` (0–2)  |
 
 Explicit `tokens` overrides always take precedence over scale-generated values.
 
@@ -260,7 +260,7 @@ const cardOverrides = stylex.create({
   container: {
     borderRadius: '20px',
     background:
-      'linear-gradient(135deg, var(--color-accent), var(--color-positive))',
+      'linear-gradient(135deg, var(--color-accent), var(--color-success))',
     padding: '2px', // gradient border width
   },
   content: {

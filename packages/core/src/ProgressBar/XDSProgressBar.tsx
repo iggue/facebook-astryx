@@ -24,7 +24,7 @@ import {
   fontWeightVars,
   lineHeightVars,
   durationVars,
-  easingVars,
+  easeVars,
 } from '../theme/tokens.stylex';
 import {xdsClassName, mergeProps} from '../utils';
 
@@ -178,7 +178,7 @@ const styles = stylex.create({
   },
   track: {
     width: '100%',
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
     borderRadius: radiusVars['--radius-rounded'],
     overflow: 'hidden',
   },
@@ -187,7 +187,7 @@ const styles = stylex.create({
     borderRadius: radiusVars['--radius-rounded'],
     transitionProperty: 'width',
     transitionDuration: durationVars['--duration-medium'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   indeterminateFill: {
     height: '100%',
@@ -220,13 +220,13 @@ const variantStyles = stylex.create({
     backgroundColor: colorVars['--color-accent'],
   },
   positive: {
-    backgroundColor: colorVars['--color-positive'],
+    backgroundColor: colorVars['--color-success'],
   },
   warning: {
     backgroundColor: colorVars['--color-warning'],
   },
   negative: {
-    backgroundColor: colorVars['--color-negative'],
+    backgroundColor: colorVars['--color-error'],
   },
 });
 

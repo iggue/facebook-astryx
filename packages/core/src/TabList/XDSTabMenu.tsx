@@ -22,7 +22,7 @@ import {
   sizeVars,
   radiusVars,
   durationVars,
-  easingVars,
+  easeVars,
   shadowVars,
   textSizeVars,
   fontWeightVars,
@@ -80,10 +80,10 @@ const styles = stylex.create({
     textDecoration: 'none',
     transitionProperty: 'color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     outline: {
       default: null,
-      ':focus-visible': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',
@@ -91,7 +91,7 @@ const styles = stylex.create({
     },
   },
   triggerSelected: {
-    color: colorVars['--color-accent-text'],
+    color: colorVars['--color-text-link'],
     fontWeight: fontWeightVars['--font-weight-semibold'],
   },
   triggerLabel: {
@@ -129,7 +129,7 @@ const styles = stylex.create({
     left: 0,
     right: 0,
     height: '2px',
-    backgroundColor: colorVars['--color-divider'],
+    backgroundColor: colorVars['--color-border'],
     borderRadius: radiusVars['--radius-rounded'],
     opacity: {
       default: 0,
@@ -139,7 +139,7 @@ const styles = stylex.create({
     },
     transitionProperty: 'opacity',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     pointerEvents: 'none',
   },
   chevron: {
@@ -148,7 +148,7 @@ const styles = stylex.create({
     flexShrink: 0,
     transitionProperty: 'transform',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   chevronOpen: {
     transform: 'rotate(180deg)',
@@ -180,16 +180,16 @@ const styles = stylex.create({
     cursor: 'pointer',
     transitionProperty: 'background-color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     backgroundColor: {
       default: 'transparent',
       ':hover': {
-        '@media (hover: hover)': colorVars['--color-hover-overlay'],
+        '@media (hover: hover)': colorVars['--color-overlay-hover'],
       },
     },
     outline: {
       default: null,
-      ':focus-visible': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
   },
   menuItemSelected: {

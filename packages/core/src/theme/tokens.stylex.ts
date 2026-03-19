@@ -17,58 +17,55 @@ import * as stylex from '@stylexjs/stylex';
 export const colorDefaults = {
   // Core semantic
   '--color-accent': 'light-dark(#0064E0, #2694FE)',
-  '--color-accent-deemphasized': 'light-dark(#0082FB33, #0082FB3F)',
-  '--color-accent-text': 'light-dark(#0143B5, #4BA9FE)',
+  '--color-accent-muted': 'light-dark(#0082FB33, #0082FB3F)',
+  '--color-secondary':
+    'light-dark(rgba(5, 54, 89, 0.1), rgba(223, 226, 229, 0.2))',
   '--color-surface': 'light-dark(#FFFFFF, #1F1F22)',
   '--color-wash': 'light-dark(#F1F4F7, #111112)',
   '--color-overlay': 'light-dark(#01122866, #11111299)',
-  '--color-hover-overlay': 'light-dark(#0536590C, #FFFFFF0C)',
-  '--color-pressed-overlay': 'light-dark(#05365919, #FFFFFF19)',
-  '--color-focus-outline': 'light-dark(#0171E3, #2694FE)',
-  '--color-focus-outline-error': 'light-dark(#E3193B, #F5394F)',
-  '--color-focus-outline-success': 'light-dark(#0D8626, #0D8626)',
-  '--color-focus-outline-warning': 'light-dark(#F2C00B, #E9AF08)',
-  '--color-deemphasized': 'light-dark(#0536590C, #1111127F)',
+  '--color-overlay-hover': 'light-dark(#0536590C, #FFFFFF0C)',
+  '--color-overlay-pressed': 'light-dark(#05365919, #FFFFFF19)',
+  '--color-ring-focus': 'light-dark(#0171E3, #2694FE)',
+  '--color-ring-focus-error': 'light-dark(#E3193B, #F5394F)',
+  '--color-ring-focus-success': 'light-dark(#0D8626, #0D8626)',
+  '--color-ring-focus-warning': 'light-dark(#F2C00B, #E9AF08)',
+  '--color-muted': 'light-dark(#0536590C, #1111127F)',
 
   // Text
   '--color-text-primary': 'light-dark(#0A1317, #DFE2E5)',
   '--color-text-secondary': 'light-dark(#4E606F, #AAAFB5)',
   '--color-text-disabled': 'light-dark(#A4B0BC, #6F747C)',
   '--color-text-link': 'light-dark(#0064E0, #3E9EFB)',
-  '--color-text-placeholder': 'light-dark(#4E606F, #AAAFB5)',
-  '--color-text-on-media': 'light-dark(#FFFFFF, #FFFFFF)',
+  '--color-text-on-dark-media': 'light-dark(#FFFFFF, #FFFFFF)',
 
   // Icon
   '--color-icon-primary': 'light-dark(#0A1317, #DFE2E5)',
   '--color-icon-secondary': 'light-dark(#4E606F, #AAAFB5)',
-  '--color-icon-tertiary': 'light-dark(#748695, #8C939B)',
   '--color-icon-disabled': 'light-dark(#A4B0BC, #6F747C)',
-  '--color-icon-on-media': 'light-dark(#FFFFFF, #FFFFFF)',
+  '--color-icon-on-dark-media': 'light-dark(#FFFFFF, #FFFFFF)',
 
   // Surface variants
   '--color-card': 'light-dark(#FFFFFF, #1F1F22)',
   '--color-popover': 'light-dark(#FFFFFF, #28292C)',
 
   // Status/Sentiment
-  '--color-positive': 'light-dark(#0D8626, #0D8626)',
-  '--color-positive-deemphasized': 'light-dark(#0B991F33, #0B991F3F)',
-  '--color-negative': 'light-dark(#E3193B, #F5394F)',
-  '--color-negative-deemphasized': 'light-dark(#E3193B33, #F5394F3F)',
+  '--color-success': 'light-dark(#0D8626, #0D8626)',
+  '--color-success-muted': 'light-dark(#0B991F33, #0B991F3F)',
+  '--color-error': 'light-dark(#E3193B, #F5394F)',
+  '--color-error-muted': 'light-dark(#E3193B33, #F5394F3F)',
   '--color-warning': 'light-dark(#E9AF08, #F2C00B)',
-  '--color-warning-deemphasized': 'light-dark(#E2A40033, #E2A4003F)',
-  '--color-educational': 'light-dark(#5B08D8, #6B1EFD)',
-  '--color-educational-deemphasized': 'light-dark(#7952FF33, #5B08D83F)',
+  '--color-warning-muted': 'light-dark(#E2A40033, #E2A4003F)',
+  '--color-info': 'light-dark(#5B08D8, #6B1EFD)',
+  '--color-info-muted': 'light-dark(#7952FF33, #5B08D83F)',
 
-  // Divider
-  '--color-divider': 'light-dark(#05365919, #F2F4F619)',
-  '--color-divider-high-contrast': 'light-dark(#647685, #6F747C)',
-  '--color-divider-emphasized': 'light-dark(#CCD3DB, #494D53)',
+  // Border
+  '--color-border': 'light-dark(#05365919, #F2F4F619)',
+  '--color-border-strong': 'light-dark(#647685, #6F747C)',
+  '--color-border-emphasized': 'light-dark(#CCD3DB, #494D53)',
 
   // Effects
-  '--color-glimmer': 'light-dark(#CCD3DB, #5A5E66)',
-  '--color-glimmer-high-contrast': 'light-dark(#A4B0BC, #8C939B)',
-  '--color-shadow-elevation':
-    'light-dark(rgba(5, 54, 89, 0.1), rgba(0, 0, 0, 0.3))',
+  '--color-skeleton': 'light-dark(#CCD3DB, #5A5E66)',
+  '--color-shadow': 'light-dark(rgba(5, 54, 89, 0.1), rgba(0, 0, 0, 0.3))',
   // Hover tint: black in light mode, white in dark mode - used with color-mix for hover states
   '--color-hover-tint': 'light-dark(black, white)',
 
@@ -203,7 +200,7 @@ export const radiusVars = stylex.defineVars(radiusDefaults);
 // =============================================================================
 // Outer shadows: shadow-base (subtle) → shadow-dialog (strongest).
 // Names encode use-case categories for LLM-friendly reasoning.
-// Inset shadows: insetshadow-border-* for input state rings.
+// Inset shadows: inset-shadow-border-* for input state rings.
 
 export const shadowDefaults = {
   // Outer elevation shadows (ascending intensity: base < menu < hover < dialog)
@@ -215,13 +212,14 @@ export const shadowDefaults = {
   '--shadow-dialog':
     '0px 2px 2px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), 0px 8px 24px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3))',
   // Inset shadows for input border rings (interaction + validation states)
-  '--insetshadow-border-hover': 'inset 0px 0px 0px 2px rgba(1, 113, 227, 0.3)',
-  '--insetshadow-border-accent': 'inset 0px 0px 0px 2px rgba(1, 113, 227, 0.5)',
-  '--insetshadow-border-positive':
+  '--inset-shadow-border-hover': 'inset 0px 0px 0px 2px rgba(1, 113, 227, 0.3)',
+  '--inset-shadow-border-accent':
+    'inset 0px 0px 0px 2px rgba(1, 113, 227, 0.5)',
+  '--inset-shadow-border-positive':
     'inset 0px 0px 0px 2px rgba(38, 167, 86, 0.3)',
-  '--insetshadow-border-warning':
+  '--inset-shadow-border-warning':
     'inset 0px 0px 0px 2px rgba(226, 164, 0, 0.3)',
-  '--insetshadow-border-negative':
+  '--inset-shadow-border-negative':
     'inset 0px 0px 0px 2px rgba(227, 25, 59, 0.3)',
 } as const;
 
@@ -254,28 +252,28 @@ export type DurationVarName = keyof typeof durationDefaults;
 // Motion Tokens — Easing
 // =============================================================================
 
-export const easingDefaults = {
-  '--easing-standard': 'cubic-bezier(0.24, 1, 0.4, 1)',
+export const easeDefaults = {
+  '--ease-standard': 'cubic-bezier(0.24, 1, 0.4, 1)',
 } as const;
 
-export const easingVars = stylex.defineVars(easingDefaults);
+export const easeVars = stylex.defineVars(easeDefaults);
 
-export type EasingVarName = keyof typeof easingDefaults;
+export type EaseVarName = keyof typeof easeDefaults;
 
 // =============================================================================
 // Motion Tokens — Deprecated (transition shorthand)
 // =============================================================================
 
-/** @deprecated Use durationVars + easingVars instead */
+/** @deprecated Use durationVars + easeVars instead */
 export const transitionDefaults = {
   '--transition-fast': '0.15s ease',
   '--transition-normal': '0.2s ease',
 } as const;
 
-/** @deprecated Use durationVars + easingVars instead */
+/** @deprecated Use durationVars + easeVars instead */
 export const transitionRaw = transitionDefaults;
 
-/** @deprecated Use durationVars + easingVars instead */
+/** @deprecated Use durationVars + easeVars instead */
 export const transitionVars = stylex.defineVars(transitionDefaults);
 
 // =============================================================================
@@ -360,7 +358,7 @@ export type SpacingVarName = keyof typeof spacingDefaults;
 export type SizeVarName = keyof typeof sizeDefaults;
 export type RadiusVarName = keyof typeof radiusDefaults;
 export type ShadowVarName = keyof typeof shadowDefaults;
-/** @deprecated Use DurationVarName | EasingVarName instead */
+/** @deprecated Use DurationVarName | EaseVarName instead */
 export type TransitionVarName = keyof typeof transitionDefaults;
 export type TypographyVarName = keyof typeof typographyDefaults;
 export type TextSizeVarName = keyof typeof textSizeDefaults;

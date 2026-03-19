@@ -27,7 +27,7 @@ import {
   spacingVars,
   radiusVars,
   durationVars,
-  easingVars,
+  easeVars,
   typographyVars,
   textSizeVars,
 } from '../theme/tokens.stylex';
@@ -162,7 +162,7 @@ const styles = stylex.create({
   },
   track: {
     position: 'absolute',
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
     borderRadius: radiusVars['--radius-rounded'],
   },
   trackHorizontal: {
@@ -203,7 +203,7 @@ const styles = stylex.create({
     transform: 'translate(-50%, -50%)',
     transitionProperty: 'background-color, box-shadow',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     outline: 'none',
     cursor: 'grab',
     zIndex: 1,
@@ -226,7 +226,7 @@ const styles = stylex.create({
   thumbFocusWithin: {
     outline: {
       default: 'none',
-      ':focus-within': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-within': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',
@@ -234,7 +234,7 @@ const styles = stylex.create({
     },
   },
   thumbDisabled: {
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
     cursor: 'not-allowed',
   },
   textValue: {
@@ -259,7 +259,7 @@ const styles = stylex.create({
   },
   mark: {
     position: 'absolute',
-    backgroundColor: colorVars['--color-divider-emphasized'],
+    backgroundColor: colorVars['--color-border-emphasized'],
     borderRadius: radiusVars['--radius-rounded'],
   },
   markHorizontal: {

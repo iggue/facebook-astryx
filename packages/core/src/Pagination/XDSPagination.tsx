@@ -25,7 +25,7 @@ import {
   sizeVars,
   spacingVars,
   durationVars,
-  easingVars,
+  easeVars,
   textSizeVars,
 } from '../theme/tokens.stylex';
 import {XDSButton} from '../Button';
@@ -194,14 +194,14 @@ const styles = stylex.create({
     borderStyle: 'none',
     padding: 0,
     borderRadius: '50%',
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
     cursor: 'pointer',
     transitionProperty: 'background-color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     outline: {
       default: 'none',
-      ':focus-visible': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',

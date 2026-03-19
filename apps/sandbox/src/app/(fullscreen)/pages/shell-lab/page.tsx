@@ -784,7 +784,7 @@ export default function ShellLabPage() {
                       width: '100%',
                       padding: '8px 12px',
                       borderRadius: 8,
-                      border: '1px solid var(--color-divider)',
+                      border: '1px solid var(--color-border)',
                       background: 'var(--color-wash)',
                       fontSize: 14,
                       outline: 'none',

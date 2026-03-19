@@ -37,14 +37,14 @@ Control heights for consistent sizing across buttons, inputs, and selectors.
 
 ### Semantic Colors
 
-| Token            | Usage                |
-| ---------------- | -------------------- |
-| --color-accent   | Primary action color |
-| --color-surface  | Background surface   |
-| --color-wash     | Secondary background |
-| --color-positive | Success states       |
-| --color-negative | Error states         |
-| --color-warning  | Warning states       |
+| Token           | Usage                |
+| --------------- | -------------------- |
+| --color-accent  | Primary action color |
+| --color-surface | Background surface   |
+| --color-wash    | Secondary background |
+| --color-success | Success states       |
+| --color-error   | Error states         |
+| --color-warning | Warning states       |
 
 ### Text Colors
 
@@ -107,17 +107,17 @@ const sharpTheme = defineTheme({
 
 ## Shadow Tokens
 
-| Token                         | Usage                     |
-| ----------------------------- | ------------------------- |
-| --shadow-base                 | Subtle lift (cards)       |
-| --shadow-menu                 | Floating elements (menus) |
-| --shadow-hover                | Hover lift, toasts        |
-| --shadow-dialog               | Dialogs, modals           |
-| --insetshadow-border-hover    | Input hover ring          |
-| --insetshadow-border-accent   | Input focused/active ring |
-| --insetshadow-border-positive | Input success ring        |
-| --insetshadow-border-warning  | Input warning ring        |
-| --insetshadow-border-negative | Input error ring          |
+| Token                          | Usage                     |
+| ------------------------------ | ------------------------- |
+| --shadow-base                  | Subtle lift (cards)       |
+| --shadow-menu                  | Floating elements (menus) |
+| --shadow-hover                 | Hover lift, toasts        |
+| --shadow-dialog                | Dialogs, modals           |
+| --inset-shadow-border-hover    | Input hover ring          |
+| --inset-shadow-border-accent   | Input focused/active ring |
+| --inset-shadow-border-positive | Input success ring        |
+| --inset-shadow-border-warning  | Input warning ring        |
+| --inset-shadow-border-negative | Input error ring          |
 
 ## Typography Tokens
 

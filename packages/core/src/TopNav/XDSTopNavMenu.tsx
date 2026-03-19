@@ -31,7 +31,7 @@ import {
   spacingVars,
   radiusVars,
   durationVars,
-  easingVars,
+  easeVars,
   textSizeVars,
   fontWeightVars,
   lineHeightVars,
@@ -58,16 +58,16 @@ const styles = stylex.create({
     cursor: 'pointer',
     transitionProperty: 'background-color, color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     backgroundColor: {
       default: 'transparent',
       ':hover': {
-        '@media (hover: hover)': colorVars['--color-hover-overlay'],
+        '@media (hover: hover)': colorVars['--color-overlay-hover'],
       },
     },
     outline: {
       default: null,
-      ':focus-visible': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',
@@ -78,14 +78,14 @@ const styles = stylex.create({
   },
   triggerOpen: {
     color: colorVars['--color-text-primary'],
-    backgroundColor: colorVars['--color-hover-overlay'],
+    backgroundColor: colorVars['--color-overlay-hover'],
   },
   chevron: {
     display: 'inline-flex',
     alignItems: 'center',
     transitionProperty: 'transform',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   chevronOpen: {
     transform: 'rotate(180deg)',
@@ -114,17 +114,17 @@ const styles = stylex.create({
     cursor: 'pointer',
     transitionProperty: 'background-color',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
     backgroundColor: {
       default: 'transparent',
       ':hover': {
-        '@media (hover: hover)': colorVars['--color-hover-overlay'],
+        '@media (hover: hover)': colorVars['--color-overlay-hover'],
       },
     },
     border: 'none',
     outline: {
       default: null,
-      ':focus-visible': `2px solid ${colorVars['--color-focus-outline']}`,
+      ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
     outlineOffset: {
       default: '0',
@@ -138,7 +138,7 @@ const styles = stylex.create({
     width: 40,
     height: 40,
     borderRadius: radiusVars['--radius-2'],
-    backgroundColor: colorVars['--color-deemphasized'],
+    backgroundColor: colorVars['--color-muted'],
     flexShrink: 0,
   },
   menuItemContent: {
@@ -175,7 +175,7 @@ const drawerStyles = stylex.create({
     display: 'inline-flex',
     transitionProperty: 'transform',
     transitionDuration: durationVars['--duration-fast'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   chevronExpanded: {
     transform: 'rotate(180deg)',
@@ -185,7 +185,7 @@ const drawerStyles = stylex.create({
     gridTemplateRows: '0fr',
     transitionProperty: 'grid-template-rows',
     transitionDuration: durationVars['--duration-medium'],
-    transitionTimingFunction: easingVars['--easing-standard'],
+    transitionTimingFunction: easeVars['--ease-standard'],
   },
   itemsExpanded: {
     gridTemplateRows: '1fr',
