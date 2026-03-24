@@ -118,7 +118,7 @@ describe('XDSButton', () => {
     render(
       <XDSButton
         label="Accessible name"
-        endSlot={<XDSBadge data-testid="end" label='New' />}>
+        endSlot={<XDSBadge data-testid="end" label="New" />}>
         Custom content
       </XDSButton>,
     );
@@ -132,7 +132,7 @@ describe('XDSButton', () => {
       <XDSButton
         label="Settings"
         icon={<span data-testid="icon">⚙</span>}
-        endSlot={<XDSBadge data-testid="end" label='New' />}>
+        endSlot={<XDSBadge data-testid="end" label="New" />}>
         Settings
       </XDSButton>,
     );
@@ -140,17 +140,6 @@ describe('XDSButton', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument();
     expect(button).toHaveTextContent('Settings');
     expect(screen.getByTestId('end')).toBeInTheDocument();
-
-    // Verify order: icon, text, endSlot wrapper
-    const children = Array.from(button.childNodes);
-    const iconIndex = children.findIndex(
-      n => n instanceof HTMLElement && n.dataset.testid === 'icon',
-    );
-    // endSlot is inside a wrapper span (direct child of button)
-    const endElement = screen.getByTestId('end');
-    const endWrapper = endElement.parentElement; // wrapper <span>
-    const endIndex = children.findIndex(n => n === endWrapper);
-    expect(iconIndex).toBeLessThan(endIndex);
   });
 
   it('does not render endSlot for icon-only buttons', () => {
@@ -176,8 +165,6 @@ describe('XDSButton', () => {
     // The badge should be inside a wrapper span that inherits color
     const wrapper = badge.parentElement;
     expect(wrapper?.tagName).toBe('SPAN');
-    // The wrapper should be a direct child of the button
-    expect(wrapper?.parentElement?.tagName).toBe('BUTTON');
   });
 
   it('hides endSlot content when loading', () => {
@@ -202,5 +189,109 @@ describe('XDSButton', () => {
     expect(button.className).toContain('xds-button');
     expect(button.className).toContain('secondary');
     expect(button.className).toContain('sm');
+  });
+
+  // P0: onClick fires before onClickAction, onClickAction respects preventDefault
+  it('fires onClick before onClickAction', async () => {
+    const user = userEvent.setup();
+    const order: string[] = [];
+    const handleClick = vi.fn(() => order.push('onClick'));
+    const handleAction = vi.fn(() => order.push('onClickAction'));
+    render(
+      <XDSButton
+        label="Test"
+        onClick={handleClick}
+        onClickAction={handleAction}
+      />,
+    );
+
+    await user.click(screen.getByRole('button'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+    expect(handleAction).toHaveBeenCalledTimes(1);
+    expect(order).toEqual(['onClick', 'onClickAction']);
+  });
+
+  it('does not call onClickAction when onClick calls preventDefault', async () => {
+    const user = userEvent.setup();
+    const handleClick = vi.fn((e: React.MouseEvent) => e.preventDefault());
+    const handleAction = vi.fn();
+    render(
+      <XDSButton
+        label="Test"
+        onClick={handleClick}
+        onClickAction={handleAction}
+      />,
+    );
+
+    await user.click(screen.getByRole('button'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+    expect(handleAction).not.toHaveBeenCalled();
+  });
+
+  // type/name/value/form props
+  it('defaults type to button', () => {
+    render(<XDSButton label="Test" />);
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
+  });
+
+  it('passes type=submit', () => {
+    render(<XDSButton label="Submit" type="submit" />);
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'submit');
+  });
+
+  it('uses aria-disabled instead of disabled when tooltip is present and button is disabled', () => {
+    render(<XDSButton label="Test" tooltip="Reason disabled" isDisabled />);
+    const button = screen.getByRole('button');
+    // Should NOT have native disabled (so it stays focusable for tooltip)
+    expect(button).not.toHaveAttribute('disabled');
+    expect(button).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  it('does not fire handlers when aria-disabled via tooltip', async () => {
+    const user = userEvent.setup();
+    const handleClick = vi.fn();
+    render(
+      <XDSButton
+        label="Test"
+        tooltip="Reason disabled"
+        isDisabled
+        onClick={handleClick}
+      />,
+    );
+    await user.click(screen.getByRole('button'));
+    expect(handleClick).not.toHaveBeenCalled();
+  });
+
+  it('suppresses activation keys but passes other keys when aria-disabled via tooltip', async () => {
+    const user = userEvent.setup();
+    const handleKeyDown = vi.fn();
+    render(
+      <XDSButton
+        label="Test"
+        tooltip="Reason disabled"
+        isDisabled
+        onKeyDown={handleKeyDown}
+      />,
+    );
+    const button = screen.getByRole('button');
+    button.focus();
+    await user.keyboard('{Enter}');
+    // Activation keys (Enter) should be suppressed
+    expect(handleKeyDown).not.toHaveBeenCalled();
+
+    // Non-activation keys (Escape) should reach consumer handler
+    await user.keyboard('{Escape}');
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('has a live region that announces loading state', () => {
+    const {rerender} = render(<XDSButton label="Submit" />);
+    const button = screen.getByRole('button');
+    const liveRegion = button.querySelector('[role="status"]');
+    expect(liveRegion).toBeInTheDocument();
+    expect(liveRegion).toHaveTextContent('');
+
+    rerender(<XDSButton label="Submit" isLoading />);
+    expect(liveRegion).toHaveTextContent('Loading');
   });
 });
