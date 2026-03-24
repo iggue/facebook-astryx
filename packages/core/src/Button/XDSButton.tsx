@@ -15,8 +15,7 @@
  * Last synced props: label, variant, size, isDisabled, isLoading, onClickAction, icon, children, tooltip, endSlot
  */
 
-
-import {useTransition, type ReactElement, type ReactNode} from 'react';
+import {useRef, useTransition, type ReactElement, type ReactNode} from 'react';
 import type {XDSBaseProps} from '../XDSBaseProps';
 import * as stylex from '@stylexjs/stylex';
 import {
@@ -61,7 +60,10 @@ const styles = stylex.create({
     fontWeight: fontWeightVars['--font-weight-medium'],
     cursor: 'pointer',
     transitionProperty: 'background-image, transform',
-    transitionDuration: durationVars['--duration-fast'],
+    transitionDuration: {
+      default: durationVars['--duration-fast'],
+      '@media (prefers-reduced-motion: reduce)': '0s',
+    },
     transitionTimingFunction: easeVars['--ease-standard'],
     transform: {
       default: 'scale(1)',
@@ -71,19 +73,44 @@ const styles = stylex.create({
   disabled: {
     cursor: 'not-allowed',
     opacity: 0.5,
+    backgroundImage: 'none',
     transform: {
       default: 'none',
       ':active': 'none',
     },
   },
+  ariaDisabled: {
+    backgroundImage: {
+      default: 'none',
+      ':hover': {
+        '@media (hover: hover)': 'none',
+      },
+      ':active': 'none',
+    },
+  },
   iconOnly: {
-    aspectRatio: '1 / 1',
+    '--button-icon-only-aspect': '1 / 1',
+    aspectRatio: 'var(--button-icon-only-aspect)',
     paddingInline: spacingVars['--spacing-2'],
   },
   endSlotWrapper: {
     display: 'inline-flex',
     alignItems: 'center',
     color: 'inherit',
+  },
+  contentWrapper: {
+    display: 'contents',
+  },
+  visuallyHidden: {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    padding: 0,
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0, 0, 0, 0)',
+    whiteSpace: 'nowrap',
+    borderWidth: 0,
   },
 });
 
@@ -120,9 +147,10 @@ const variants = stylex.create({
       default: null,
       ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
+    '--button-focus-offset': '3px',
     outlineOffset: {
       default: '0',
-      ':focus-visible': '3px',
+      ':focus-visible': 'var(--button-focus-offset)',
     },
   },
   secondary: {
@@ -139,9 +167,10 @@ const variants = stylex.create({
       default: null,
       ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
+    '--button-focus-offset': '3px',
     outlineOffset: {
       default: '0',
-      ':focus-visible': '3px',
+      ':focus-visible': 'var(--button-focus-offset)',
     },
   },
   ghost: {
@@ -158,9 +187,10 @@ const variants = stylex.create({
       default: null,
       ':focus-visible': `2px solid ${colorVars['--color-ring-focus']}`,
     },
+    '--button-focus-offset': '3px',
     outlineOffset: {
       default: '0',
-      ':focus-visible': '3px',
+      ':focus-visible': 'var(--button-focus-offset)',
     },
   },
   destructive: {
@@ -177,9 +207,10 @@ const variants = stylex.create({
       default: null,
       ':focus-visible': `2px solid ${colorVars['--color-error']}`,
     },
+    '--button-focus-offset': '3px',
     outlineOffset: {
       default: '0',
-      ':focus-visible': '3px',
+      ':focus-visible': 'var(--button-focus-offset)',
     },
   },
 });
@@ -347,6 +378,7 @@ export function XDSButton({
   label,
   variant = 'secondary',
   size = 'md',
+  type = 'button',
   isDisabled = false,
   isLoading = false,
   onClickAction,
@@ -361,20 +393,45 @@ export function XDSButton({
   ...props
 }: XDSButtonProps): ReactElement {
   const [isPending, startTransition] = useTransition();
+  const actionInFlightRef = useRef(false);
   const isLoadingState = isLoading || isPending;
   const buttonDisabled = isDisabled || isLoadingState;
   const useLightSpinner = variant === 'primary' || variant === 'destructive';
   const isIconOnly = icon != null && children == null;
 
+  // Use aria-disabled when tooltip is present so the button remains focusable
+  // for keyboard users to reach the tooltip. Otherwise use native disabled.
+  const useAriaDisabled = tooltip != null && buttonDisabled;
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClickAction) {
+    if (buttonDisabled || actionInFlightRef.current) {
       e.preventDefault();
-      startTransition(async () => {
-        await onClickAction(e);
-      });
+      return;
     }
     props.onClick?.(e);
+    if (onClickAction && !e.defaultPrevented) {
+      actionInFlightRef.current = true;
+      startTransition(async () => {
+        try {
+          await onClickAction(e);
+        } finally {
+          actionInFlightRef.current = false;
+        }
+      });
+    }
   };
+
+  // When aria-disabled, suppress activation keys (Enter/Space) but allow
+  // other keys (Escape, arrows) to reach consumer handlers.
+  const handleKeyDown = useAriaDisabled
+    ? (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+        } else {
+          props.onKeyDown?.(e);
+        }
+      }
+    : undefined;
 
   // Ghost buttons opt into edge compensation — they self-adjust margins
   // when placed at container edges (e.g., TopNav endContent).
@@ -391,9 +448,8 @@ export function XDSButton({
   const button = (
     <button
       ref={ref}
-      disabled={buttonDisabled}
-      aria-label={isIconOnly ? label : undefined}
-      aria-busy={isLoadingState || undefined}
+      type={type}
+      disabled={useAriaDisabled ? undefined : buttonDisabled}
       {...mergeProps(
         xdsClassName('button', {variant, size}),
         stylex.props(
@@ -402,6 +458,7 @@ export function XDSButton({
           variants[variant],
           isIconOnly && styles.iconOnly,
           buttonDisabled && styles.disabled,
+          useAriaDisabled && styles.ariaDisabled,
           isLoadingState && loadingStyles.loading,
           edgePaddingSignal,
           edgeCompStyle,
@@ -411,20 +468,39 @@ export function XDSButton({
         style,
       )}
       {...props}
-      onClick={handleClick}>
+      {...((isIconOnly && label !== '') || (isLoadingState && !isIconOnly)
+        ? {'aria-label': label}
+        : null)}
+      aria-busy={isLoadingState || undefined}
+      aria-disabled={useAriaDisabled || undefined}
+      onClick={handleClick}
+      {...(handleKeyDown ? {onKeyDown: handleKeyDown} : null)}>
       {isLoadingState && (
-        <span {...stylex.props(loadingStyles.spinnerOverlay)}>
+        <span
+          {...stylex.props(loadingStyles.spinnerOverlay)}
+          aria-hidden="true">
           <XDSSpinner
             size="sm"
             shade={useLightSpinner ? 'onMedia' : 'default'}
           />
         </span>
       )}
-      {icon}
-      {children ?? (isIconOnly ? null : label)}
-      {!isIconOnly && endSlot && (
-        <span {...stylex.props(styles.endSlotWrapper)}>{endSlot}</span>
-      )}
+      <span
+        {...stylex.props(styles.contentWrapper)}
+        aria-hidden={isLoadingState || undefined}>
+        {icon}
+        {children ?? (isIconOnly ? null : label)}
+        {!isIconOnly && endSlot && (
+          <span {...stylex.props(styles.endSlotWrapper)}>{endSlot}</span>
+        )}
+      </span>
+      {/* Live region for loading state announcements */}
+      <span
+        {...stylex.props(styles.visuallyHidden)}
+        role="status"
+        aria-live="polite">
+        {isLoadingState ? 'Loading' : ''}
+      </span>
     </button>
   );
 
