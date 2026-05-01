@@ -40,23 +40,9 @@ export const docs = {
     ],
   },
   theming: {
-    targets: [{className: 'xds-resize-handle', visualProps: ['direction']}],
-    vars: [
-      {
-        name: '--resize-handle-width',
-        description: 'Visual width of the pill indicator',
-        default: '3px',
-      },
-      {
-        name: '--resize-handle-height',
-        description: 'Height of the pill indicator',
-        default: '32px',
-      },
-      {
-        name: '--resize-handle-hit-area',
-        description: 'Clickable area width around the pill',
-        default: '16px',
-      },
+    targets: [
+      {className: 'xds-resize-handle', visualProps: ['direction']},
+      {className: 'xds-resize-handle-pill'},
     ],
   },
   components: [
@@ -155,6 +141,15 @@ export const docs = {
           description:
             'Show the pill grip at rest instead of only on hover. Use when discoverability is important.',
           default: 'false',
+        },
+        {
+          name: 'pillPlacement',
+          type: "'start' | 'end' | 'center' | 'auto'",
+          description:
+            'Which side of the divider the pill sits on. ' +
+            'auto = content side (derived from isReversed), flips when collapsed. ' +
+            'start = left/top, end = right/bottom, center = centered on divider.',
+          default: "'auto'",
         },
         {
           name: 'label',

@@ -2,28 +2,62 @@
 
 /**
  * @file XDSResizeHandle.tsx
- * @input direction, isReversed, hasDivider, isAlwaysVisible, ResizableProps
+ * @input direction, isReversed, hasDivider, isAlwaysVisible, pillPlacement, ResizableProps
  * @output Styled drag handle with WAI-ARIA separator role and keyboard support
  * @position Between resizable panels; consumed directly by builders
  *
- * Shadcn-inspired approach: the handle element is 1px wide (the divider line
- * itself), with an absolutely-positioned wider hit area for pointer interaction.
- * Optional pill grip indicator centered on the line.
+ * The handle element is 1px wide (the divider line itself), with an
+ * absolutely-positioned wider hit area for pointer interaction.
+ * Pill grip indicator can sit on either side of the divider (or centered)
+ * via pillPlacement. Default 'auto' places the pill on the panel side and
+ * flips when the panel collapses to 0px so it stays accessible.
+ *
+ * Pill placement uses a single stylex dynamic style that accepts a direction
+ * multiplier (-1 or 1). The pill element has its own xdsClassName
+ * ('resize-handle-pill') so themes can target size/shape directly.
  */
 
 import {useCallback, useEffect, useRef, useState} from 'react';
 import type {HTMLAttributes, ReactNode} from 'react';
 import * as stylex from '@stylexjs/stylex';
-import {colorVars, durationVars, easeVars} from '../theme/tokens.stylex';
+import {
+  colorVars,
+  durationVars,
+  easeVars,
+  radiusVars,
+  spacingVars,
+} from '../theme/tokens.stylex';
 import {xdsClassName, mergeProps} from '../utils';
 import type {ResizableProps} from './useXDSResizable';
 
 const KEYBOARD_STEP = 10;
 const KEYBOARD_LARGE_STEP = 50;
 
+type PillPlacement = 'start' | 'end' | 'center' | 'auto';
+
+function resolveEffectiveSide(
+  pillPlacement: PillPlacement,
+  isReversed: boolean,
+  isCollapsed: boolean,
+): 'start' | 'end' | 'center' {
+  if (pillPlacement !== 'auto') return pillPlacement;
+  const panelSide: 'start' | 'end' = isReversed ? 'end' : 'start';
+  if (isCollapsed) {
+    return panelSide === 'start' ? 'end' : 'start';
+  }
+  return panelSide;
+}
+
+/**
+ * Hit area bias percentage. When the pill is off-center, the grab zone
+ * shifts ~2:1 toward the pill so users can reach the visible grip easily.
+ */
+function hitAreaBias(effectiveSide: 'start' | 'end' | 'center'): string {
+  if (effectiveSide === 'center') return '50%';
+  return effectiveSide === 'start' ? '66.67%' : '33.33%';
+}
+
 const styles = stylex.create({
-  // The handle is 1px in layout flow — the visible divider line itself.
-  // A wider hit area is achieved via the hitArea child.
   handle: {
     position: 'relative',
     flexShrink: 0,
@@ -40,7 +74,7 @@ const styles = stylex.create({
     },
     outlineOffset: {
       default: null,
-      ':focus-visible': '2px',
+      ':focus-visible': spacingVars['--spacing-0-5'],
     },
   },
   horizontal: {
@@ -53,8 +87,6 @@ const styles = stylex.create({
     width: '100%',
     cursor: 'row-resize',
   },
-  // Zero-footprint mode: handle takes 0px in layout when no divider.
-  // Hit area + pill use absolute positioning so they still work.
   noDividerHorizontal: {
     backgroundColor: 'transparent',
     width: 0,
@@ -74,7 +106,6 @@ const styles = stylex.create({
     pointerEvents: 'none',
   },
 
-  // Wider invisible hit area — extends beyond the 1px line.
   hitArea: {
     position: 'absolute',
     zIndex: 1,
@@ -82,49 +113,41 @@ const styles = stylex.create({
     userSelect: 'none',
   },
   hitAreaHorizontal: {
-    width: 'var(--resize-handle-hit-area, 16px)',
+    width: spacingVars['--spacing-4'],
     top: 0,
     bottom: 0,
     left: '50%',
-    transform: 'translateX(-50%)',
     cursor: 'col-resize',
   },
   hitAreaVertical: {
-    height: 'var(--resize-handle-hit-area, 16px)',
+    height: spacingVars['--spacing-4'],
     left: 0,
     right: 0,
     top: '50%',
-    transform: 'translateY(-50%)',
     cursor: 'row-resize',
   },
 
-  // Pill grip indicator — absolutely positioned so it's not constrained
-  // by the 1px handle container. Without this, the vertical pill (3px tall)
-  // gets squished to 1px by the flex layout of the 1px-tall handle.
+  // Pill base — themes target .xds-resize-handle-pill for size/shape.
   pill: {
     position: 'absolute',
     zIndex: 2,
-    borderRadius: 2,
+    pointerEvents: 'none',
+    borderRadius: radiusVars['--radius-full'],
     backgroundColor: colorVars['--color-border'],
-    transitionProperty: 'opacity, background-color',
+    transitionProperty: 'opacity, background-color, transform',
     transitionDuration: durationVars['--duration-fast'],
     transitionTimingFunction: easeVars['--ease-standard'],
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   },
   pillHorizontal: {
-    width: 'var(--resize-handle-width, 3px)',
-    height: 'var(--resize-handle-height, 32px)',
-    // Centered on the 1px vertical line
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    width: 3,
+    height: spacingVars['--spacing-8'],
   },
   pillVertical: {
-    height: 'var(--resize-handle-width, 3px)',
-    width: 'var(--resize-handle-height, 32px)',
-    // Centered on the 1px horizontal line
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    width: spacingVars['--spacing-8'],
+    height: 3,
   },
   pillHidden: {opacity: 0},
   pillVisible: {opacity: 1},
@@ -136,6 +159,28 @@ const styles = stylex.create({
     opacity: 1,
     backgroundColor: colorVars['--color-border-emphasized'],
   },
+});
+
+// Dynamic styles — avoids inline style overrides.
+// Each axis gets its own function since StyleX requires static structure.
+const dynamicStyles = stylex.create({
+  hitAreaBiasX: (pct: string) => ({
+    transform: `translateX(-${pct})`,
+  }),
+  hitAreaBiasY: (pct: string) => ({
+    transform: `translateY(-${pct})`,
+  }),
+  pillOffsetX: (dir: number) => ({
+    left: 0,
+    transform: `translate(calc(${dir} * (100% + ${spacingVars['--spacing-1']})), -50%)`,
+  }),
+  // Vertical offset: no rotation — use explicit landscape dimensions.
+  // Rotation + offset creates confusing coordinate math since translate
+  // operates in pre-rotation local space.
+  pillOffsetY: (dir: number) => ({
+    top: 0,
+    transform: `translate(-50%, calc(${dir} * (100% + ${spacingVars['--spacing-1']})))`,
+  }),
 });
 
 export interface XDSResizeHandleProps extends Omit<
@@ -178,6 +223,16 @@ export interface XDSResizeHandleProps extends Omit<
   isAlwaysVisible?: boolean;
 
   /**
+   * Which side of the divider line the pill sits on.
+   * - `'auto'` — panel side by default, flips when panel is collapsed to 0px
+   * - `'start'` — left (horizontal) or top (vertical)
+   * - `'end'` — right (horizontal) or bottom (vertical)
+   * - `'center'` — centered on the divider line (original behavior)
+   * @default 'auto'
+   */
+  pillPlacement?: PillPlacement;
+
+  /**
    * Accessible label for the separator.
    * @default 'Resize handle'
    */
@@ -198,6 +253,8 @@ export interface XDSResizeHandleProps extends Omit<
  * divider line with a wider invisible hit area and optional pill grip indicator.
  * Supports keyboard resizing via arrow keys and WAI-ARIA separator role.
  *
+ * The pill element uses class `xds-resize-handle-pill` for theme targeting.
+ *
  * @example
  * ```
  * <XDSResizeHandle
@@ -212,6 +269,7 @@ export function XDSResizeHandle({
   isDisabled = false,
   hasDivider = false,
   isAlwaysVisible = true,
+  pillPlacement = 'auto',
   label = 'Resize handle',
   resizable,
   children,
@@ -225,6 +283,11 @@ export function XDSResizeHandle({
   const [isFocused, setIsFocused] = useState(false);
   const isHorizontal = direction === 'horizontal';
   const sign = isReversed ? -1 : 1;
+  const effectiveSide = resolveEffectiveSide(
+    pillPlacement,
+    isReversed,
+    resizable?._isCollapsed ?? false,
+  );
 
   const getRTLMultiplier = useCallback((): number => {
     const el = handleRef.current;
@@ -403,6 +466,9 @@ export function XDSResizeHandle({
         {...stylex.props(
           styles.hitArea,
           isHorizontal ? styles.hitAreaHorizontal : styles.hitAreaVertical,
+          isHorizontal
+            ? dynamicStyles.hitAreaBiasX(hitAreaBias(effectiveSide))
+            : dynamicStyles.hitAreaBiasY(hitAreaBias(effectiveSide)),
           isDisabled && styles.disabled,
         )}
         onPointerDown={handlePointerDown}
@@ -412,15 +478,26 @@ export function XDSResizeHandle({
         }}
         onKeyDown={handleKeyDown}
       />
-      {/* Pill grip indicator */}
+      {/* Pill grip indicator — themed via .xds-resize-handle-pill */}
       {children ?? (
         <div
-          {...stylex.props(
-            styles.pill,
-            isHorizontal ? styles.pillHorizontal : styles.pillVertical,
-            isAlwaysVisible ? styles.pillVisible : styles.pillHidden,
-            isInteracting && !isDragging && styles.pillHover,
-            isDragging && styles.pillActive,
+          {...mergeProps(
+            xdsClassName('resize-handle-pill'),
+            stylex.props(
+              styles.pill,
+              isHorizontal ? styles.pillHorizontal : styles.pillVertical,
+              effectiveSide !== 'center' &&
+                (isHorizontal
+                  ? dynamicStyles.pillOffsetX(
+                      effectiveSide === 'start' ? -1 : 1,
+                    )
+                  : dynamicStyles.pillOffsetY(
+                      effectiveSide === 'start' ? -1 : 1,
+                    )),
+              isAlwaysVisible ? styles.pillVisible : styles.pillHidden,
+              isInteracting && !isDragging && styles.pillHover,
+              isDragging && styles.pillActive,
+            ),
           )}
         />
       )}
