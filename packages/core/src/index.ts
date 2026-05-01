@@ -138,6 +138,9 @@ export * from './Spinner';
 // Timestamp display
 export * from './Timestamp';
 
+// Overlay
+export * from './Overlay';
+
 // Overflow list
 export * from './OverflowList';
 
