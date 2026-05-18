@@ -78,10 +78,7 @@ export interface SeriesDef {
    * Called by the chart root during the render pass.
    * Returns SVG elements (or manages its own canvas for WebGL).
    */
-  render(
-    resolved: ResolvedPoint[],
-    ctx: SeriesContext,
-  ): ReactNode;
+  render(resolved: ResolvedPoint[], ctx: SeriesContext): ReactNode;
 }
 
 /** Resolved positions for all series */
