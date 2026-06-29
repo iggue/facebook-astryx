@@ -1,0 +1,120 @@
+{
+  "iterationId": "3d9ed149",
+  "createdAt": "2026-06-29T11:06:11.803Z",
+  "config": {
+    "target": "xds",
+    "persona": "naive",
+    "holdout": false,
+    "degradation": false,
+    "cliRetrieval": true
+  },
+  "prompts": [
+    {
+      "id": "fwc-6",
+      "category": "feature-with-constraint",
+      "prompt": "Build a shipping method selector with three options: Standard (free, 5-7 days), Express ($9.99, 2-3 days), and Overnight ($24.99, next day). Only one can be selected.",
+      "expectedComponents": [
+        "XDSRadioList",
+        "XDSCard"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "wd-1",
+      "category": "workflow-description",
+      "prompt": "Build a checkout flow: cart summary → shipping → payment → confirmation",
+      "expectedComponents": [
+        "XDSCard",
+        "XDSButton",
+        "XDSTextInput"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "cwm-3",
+      "category": "clone-with-modification",
+      "prompt": "Like Notion's page header with icon picker and cover image",
+      "expectedComponents": [
+        "XDSCard",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "sd-7",
+      "category": "state-driven",
+      "prompt": "Build a file upload component that shows a progress bar during upload. Display the filename, file size, and percentage complete. Show a success state when done.",
+      "expectedComponents": [
+        "XDSProgressBar",
+        "XDSText",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "dd-4",
+      "category": "data-display",
+      "prompt": "Create a user profile page with tabs for Overview, Activity, and Settings. Each tab should show different content. The Overview tab should be selected by default.",
+      "expectedComponents": [
+        "XDSTabList",
+        "XDSTab",
+        "XDSCard"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "rc-1",
+      "category": "responsive-context",
+      "prompt": "Navigation that collapses to hamburger on mobile",
+      "expectedComponents": [
+        "XDSButton",
+        "XDSHStack"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "io-4",
+      "category": "integration-oriented",
+      "prompt": "Build a quantity selector for a shopping cart item. It should have a number input with increment/decrement, min of 1, max of 99. Changing the quantity should call an update API endpoint.",
+      "expectedComponents": [
+        "XDSNumberInput",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "ps-3",
+      "category": "page-setup",
+      "prompt": "Create an admin panel page layout with a fixed header, collapsible left sidebar, main content area, and a right panel for details. Wrap everything in the XDS theme.",
+      "expectedComponents": [
+        "Theme",
+        "XDSLayout",
+        "XDSLayoutHeader",
+        "XDSLayoutContent",
+        "XDSLayoutPanel"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "ty-8",
+      "category": "typography",
+      "prompt": "Create a profile card with the user's name as a heading, their role as a label, their bio as body text, and their join date in small supporting text",
+      "expectedComponents": [
+        "XDSCard",
+        "XDSHeading",
+        "XDSText"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "tc-1",
+      "category": "theme-customization",
+      "prompt": "Set up a dark mode toggle for my app. I want a button that switches between light and dark themes using the XDS theme system.",
+      "expectedComponents": [
+        "XDSTheme",
+        "XDSButton"
+      ],
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "iterationId": "e2d78df8",
+  "createdAt": "2026-06-29T11:05:17.293Z",
+  "config": {
+    "target": "xds",
+    "persona": "naive",
+    "holdout": false,
+    "degradation": false,
+    "cliRetrieval": true
+  },
+  "prompts": [
+    {
+      "id": "fwc-11",
+      "category": "feature-with-constraint",
+      "prompt": "Build a toolbar with icon buttons for Bold, Italic, Underline, and Link. Each button should show a tooltip with the action name and keyboard shortcut on hover.",
+      "expectedComponents": [
+        "XDSTooltip",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "wd-5",
+      "category": "workflow-description",
+      "prompt": "Build a feedback form that opens in a dialog. It should have a title field, a long-form text area for comments, and a submit button. Show a success state after submission.",
+      "expectedComponents": [
+        "XDSDialog",
+        "XDSTextInput",
+        "XDSTextArea",
+        "XDSButton",
+        "XDSLayout"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "cwm-3",
+      "category": "clone-with-modification",
+      "prompt": "Like Notion's page header with icon picker and cover image",
+      "expectedComponents": [
+        "XDSCard",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "sd-1",
+      "category": "state-driven",
+      "prompt": "Show a dashboard widget with loading → error → data states",
+      "expectedComponents": [
+        "XDSCard",
+        "XDSSkeleton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "dd-5",
+      "category": "data-display",
+      "prompt": "Build an email inbox view with a table showing sender, subject, date, and a preview snippet. Add row selection with checkboxes and a bulk actions bar that appears when items are selected.",
+      "expectedComponents": [
+        "XDSTable",
+        "XDSCheckboxInput",
+        "XDSDropdownMenu",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "rc-3",
+      "category": "responsive-context",
+      "prompt": "Cards that stack vertically on mobile but show in a grid on desktop",
+      "expectedComponents": [
+        "XDSCard"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "io-4",
+      "category": "integration-oriented",
+      "prompt": "Build a quantity selector for a shopping cart item. It should have a number input with increment/decrement, min of 1, max of 99. Changing the quantity should call an update API endpoint.",
+      "expectedComponents": [
+        "XDSNumberInput",
+        "XDSButton"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "ps-1",
+      "category": "page-setup",
+      "prompt": "Create a new page for a settings dashboard. It should have a header with the app title, a sidebar for navigation, and a main content area. Use the XDS theme system.",
+      "expectedComponents": [
+        "Theme",
+        "XDSLayout",
+        "XDSLayoutHeader",
+        "XDSLayoutContent",
+        "XDSLayoutPanel"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "ty-6",
+      "category": "typography",
+      "prompt": "Display a code example with a label that says 'Installation' above it, the code snippet 'yarn add @astryxdesign/core', and a note below in small text",
+      "expectedComponents": [
+        "XDSText"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "tc-7",
+      "category": "theme-customization",
+      "prompt": "I have a section of my app that needs a different theme than the rest — like a dark sidebar next to a light content area. How do I nest themes in XDS?",
+      "expectedComponents": [
+        "XDSTheme",
+        "XDSLayout",
+        "XDSLayoutPanel",
+        "XDSLayoutContent"
+      ],
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,3751 @@
+{
+  "astryx": {
+    "averages": {
+      "correctness": 28,
+      "accessibility": 99,
+      "codeQuality": 100,
+      "efficiency": 91,
+      "maintainability": 95
+    },
+    "overall": 83,
+    "byPrompt": {
+      "cwm-3": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 61
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Popover' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "click-non-interactive",
+              "severity": "critical",
+              "detail": "onClick on <span> without role=\"button\" or tabIndex",
+              "line": 52
+            }
+          ]
+        },
+        "codeQuality": {
+          "score": 97,
+          "findings": [
+            {
+              "rule": "index-key",
+              "severity": "minor",
+              "detail": "Array index as key",
+              "line": 35
+            }
+          ]
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 68,
+            "codeLines": 61,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 55,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.09836065573770492,
+            "decisionsPerElement": 0.4,
+            "elementCount": 14,
+            "stylingDecisionCount": 5,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 29
+          }
+        }
+      },
+      "dd-4": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 7
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/List' or its corresponding type declarations.",
+              "line": 8
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+              "line": 9
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+              "line": 10
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 87,
+          "findings": [
+            {
+              "rule": "duplicate-lines",
+              "severity": "moderate",
+              "detail": "Line repeated 3 times",
+              "count": 3,
+              "example": "{activeTab === \"_\" && ("
+            }
+          ],
+          "metrics": {
+            "totalLines": 66,
+            "codeLines": 59,
+            "stylingLines": 0,
+            "boilerplateLines": 10,
+            "logicLines": 49,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1694915254237288,
+            "decisionsPerElement": 0.5,
+            "elementCount": 28,
+            "stylingDecisionCount": 13,
+            "duplicateRatio": 0.05
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 10,
+            "avgStateSpread": 44
+          }
+        }
+      },
+      "fwc-6": {
+        "correctness": {
+          "score": 70,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 3
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 35,
+            "codeLines": 32,
+            "stylingLines": 0,
+            "boilerplateLines": 3,
+            "logicLines": 29,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.09375,
+            "decisionsPerElement": 0.6,
+            "elementCount": 7,
+            "stylingDecisionCount": 4,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 4,
+            "avgStateSpread": 5
+          }
+        }
+      },
+      "io-4": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 40
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/NumberInput' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 49,
+            "codeLines": 45,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 40,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1.2,
+            "elementCount": 5,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 36
+          }
+        }
+      },
+      "ps-3": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 29
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 32
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 38,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.13636363636363635,
+            "decisionsPerElement": 0.4,
+            "elementCount": 15,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 30
+          }
+        }
+      },
+      "rc-1": {
+        "correctness": {
+          "score": 10,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 17
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 20
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 26
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 36
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/MobileNav' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 7
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 7,
+            "logicLines": 37,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1590909090909091,
+            "decisionsPerElement": 0.1,
+            "elementCount": 14,
+            "stylingDecisionCount": 1,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 1,
+            "avgStateSpread": 31
+          }
+        }
+      },
+      "sd-7": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/FileInput' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 68,
+            "codeLines": 60,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 54,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1,
+            "decisionsPerElement": 0.7,
+            "elementCount": 9,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 45
+          }
+        }
+      },
+      "tc-1": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/theme' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 5
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "totalLines": 30,
+            "codeLines": 26,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 21,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.19230769230769232,
+            "decisionsPerElement": 0.7,
+            "elementCount": 3,
+            "stylingDecisionCount": 2,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 2,
+            "avgStateSpread": 11
+          }
+        }
+      },
+      "ty-8": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 1
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 4
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 33,
+            "codeLines": 27,
+            "stylingLines": 0,
+            "boilerplateLines": 4,
+            "logicLines": 23,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.14814814814814814,
+            "decisionsPerElement": 0.7,
+            "elementCount": 10,
+            "stylingDecisionCount": 7,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 0
+          }
+        }
+      },
+      "wd-1": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 31
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 46
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 58
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+              "line": 7
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+              "line": 8
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 60,
+          "findings": [],
+          "metrics": {
+            "totalLines": 73,
+            "codeLines": 64,
+            "stylingLines": 0,
+            "boilerplateLines": 64,
+            "logicLines": 0,
+            "stylingRatio": 0,
+            "boilerplateRatio": 1,
+            "decisionsPerElement": 0.3,
+            "elementCount": 28,
+            "stylingDecisionCount": 9,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 40
+          }
+        }
+      }
+    },
+    "byCategory": {
+      "clone-with-modification": {
+        "correctness": 25,
+        "accessibility": 85,
+        "codeQuality": 97,
+        "efficiency": 96,
+        "maintainability": 100
+      },
+      "data-display": {
+        "correctness": 0,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 87,
+        "maintainability": 92
+      },
+      "feature-with-constraint": {
+        "correctness": 70,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 96,
+        "maintainability": 100
+      },
+      "integration-oriented": {
+        "correctness": 40,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 96,
+        "maintainability": 92
+      },
+      "page-setup": {
+        "correctness": 25,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 95,
+        "maintainability": 92
+      },
+      "responsive-context": {
+        "correctness": 10,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 94,
+        "maintainability": 92
+      },
+      "state-driven": {
+        "correctness": 25,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 96,
+        "maintainability": 92
+      },
+      "theme-customization": {
+        "correctness": 40,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 92,
+        "maintainability": 100
+      },
+      "typography": {
+        "correctness": 40,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 94,
+        "maintainability": 100
+      },
+      "workflow-description": {
+        "correctness": 0,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 60,
+        "maintainability": 92
+      }
+    },
+    "darkModeRate": 0,
+    "cost": {
+      "totalDurationMs": 4700490,
+      "avgDurationMs": 470049,
+      "avgOutputChars": 1795,
+      "avgOutputLines": 52,
+      "avgDocsRead": 4.9,
+      "estimatedInputTokens": 34375,
+      "estimatedOutputTokens": 4488,
+      "byPrompt": {
+        "cwm-3": {
+          "durationMs": 470050,
+          "outputChars": 2221,
+          "outputLines": 68,
+          "docsRead": [
+            "Button",
+            "Popover",
+            "Text",
+            "TextInput"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 555
+        },
+        "dd-4": {
+          "durationMs": 470049,
+          "outputChars": 2840,
+          "outputLines": 66,
+          "docsRead": [
+            "TabList",
+            "Tab",
+            "Avatar",
+            "Text",
+            "Card",
+            "Badge",
+            "List",
+            "Switch"
+          ],
+          "estimatedInputTokens": 5375,
+          "estimatedOutputTokens": 710
+        },
+        "fwc-6": {
+          "durationMs": 470051,
+          "outputChars": 925,
+          "outputLines": 35,
+          "docsRead": [
+            "RadioList",
+            "RadioListItem",
+            "Text"
+          ],
+          "estimatedInputTokens": 2250,
+          "estimatedOutputTokens": 231
+        },
+        "io-4": {
+          "durationMs": 470049,
+          "outputChars": 1285,
+          "outputLines": 49,
+          "docsRead": [
+            "NumberInput",
+            "IconButton",
+            "Text"
+          ],
+          "estimatedInputTokens": 2250,
+          "estimatedOutputTokens": 321
+        },
+        "ps-3": {
+          "durationMs": 470048,
+          "outputChars": 1940,
+          "outputLines": 47,
+          "docsRead": [
+            "AppShell",
+            "TopNav",
+            "SideNav",
+            "SideNavItem",
+            "Text",
+            "Avatar"
+          ],
+          "estimatedInputTokens": 4125,
+          "estimatedOutputTokens": 485
+        },
+        "rc-1": {
+          "durationMs": 470049,
+          "outputChars": 2096,
+          "outputLines": 47,
+          "docsRead": [
+            "AppShell",
+            "TopNav",
+            "MobileNav",
+            "SideNavItem",
+            "Text"
+          ],
+          "estimatedInputTokens": 3500,
+          "estimatedOutputTokens": 524
+        },
+        "sd-7": {
+          "durationMs": 470050,
+          "outputChars": 1940,
+          "outputLines": 68,
+          "docsRead": [
+            "FileInput",
+            "ProgressBar",
+            "Text",
+            "Badge",
+            "Card"
+          ],
+          "estimatedInputTokens": 3500,
+          "estimatedOutputTokens": 485
+        },
+        "tc-1": {
+          "durationMs": 470047,
+          "outputChars": 930,
+          "outputLines": 30,
+          "docsRead": [
+            "Switch",
+            "Theme",
+            "Text",
+            "Card"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 233
+        },
+        "ty-8": {
+          "durationMs": 470047,
+          "outputChars": 1072,
+          "outputLines": 33,
+          "docsRead": [
+            "Avatar",
+            "Text",
+            "Card",
+            "Badge"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 268
+        },
+        "wd-1": {
+          "durationMs": 470050,
+          "outputChars": 2703,
+          "outputLines": 73,
+          "docsRead": [
+            "Button",
+            "Card",
+            "Text",
+            "TextInput",
+            "RadioList",
+            "ProgressBar",
+            "Divider"
+          ],
+          "estimatedInputTokens": 4750,
+          "estimatedOutputTokens": 676
+        }
+      }
+    }
+  },
+  "baseline": {
+    "averages": {
+      "correctness": 61,
+      "accessibility": 99,
+      "codeQuality": 100,
+      "efficiency": 89,
+      "maintainability": 95
+    },
+    "overall": 89,
+    "byPrompt": {
+      "cwm-3": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 61
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; isOpen: boolean; onOpenChange: Dispatch<SetStateAction<boolean>>; trigger: Element; }' is not assignable to type 'IntrinsicAttributes & PopoverProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; variant: \"ghost\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; key: string; variant: \"ghost\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 34
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"ghost\"; size: \"sm\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 61
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "click-non-interactive",
+              "severity": "critical",
+              "detail": "onClick on <span> without role=\"button\" or tabIndex",
+              "line": 51
+            }
+          ]
+        },
+        "codeQuality": {
+          "score": 97,
+          "findings": [
+            {
+              "rule": "index-key",
+              "severity": "minor",
+              "detail": "Array index as key",
+              "line": 34
+            }
+          ]
+        },
+        "efficiency": {
+          "score": 91,
+          "findings": [],
+          "metrics": {
+            "totalLines": 69,
+            "codeLines": 62,
+            "stylingLines": 9,
+            "boilerplateLines": 5,
+            "logicLines": 48,
+            "stylingRatio": 0.14516129032258066,
+            "boilerplateRatio": 0.08064516129032258,
+            "decisionsPerElement": 2,
+            "elementCount": 15,
+            "stylingDecisionCount": 30,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 29
+          }
+        }
+      },
+      "dd-4": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"xl\"' is not assignable to type 'AvatarSize | undefined'.",
+              "line": 18
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"success\"; }' is not assignable to type 'IntrinsicAttributes & BadgeProps'.",
+              "line": 22
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 28
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 29
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "duplicate-lines",
+              "severity": "moderate",
+              "detail": "Line repeated 3 times",
+              "count": 3,
+              "example": "{activeTab === \"_\" && ("
+            }
+          ],
+          "metrics": {
+            "totalLines": 69,
+            "codeLines": 62,
+            "stylingLines": 6,
+            "boilerplateLines": 8,
+            "logicLines": 48,
+            "stylingRatio": 0.0967741935483871,
+            "boilerplateRatio": 0.12903225806451613,
+            "decisionsPerElement": 0.8,
+            "elementCount": 29,
+            "stylingDecisionCount": 24,
+            "duplicateRatio": 0.05
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 11,
+            "avgStateSpread": 47
+          }
+        }
+      },
+      "fwc-6": {
+        "correctness": {
+          "score": 100,
+          "findings": []
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 37,
+            "codeLines": 34,
+            "stylingLines": 1,
+            "boilerplateLines": 3,
+            "logicLines": 30,
+            "stylingRatio": 0.029411764705882353,
+            "boilerplateRatio": 0.08823529411764706,
+            "decisionsPerElement": 0.9,
+            "elementCount": 8,
+            "stylingDecisionCount": 7,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 6
+          }
+        }
+      },
+      "io-4": {
+        "correctness": {
+          "score": 70,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 40
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"outlined\"' is not assignable to type 'keyof ButtonVariantMap | undefined'.",
+              "line": 21
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"outlined\"' is not assignable to type 'keyof ButtonVariantMap | undefined'.",
+              "line": 38
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 49,
+            "codeLines": 45,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 40,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1.2,
+            "elementCount": 5,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 36
+          }
+        }
+      },
+      "ps-3": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 29
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 32
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"sm\"' is not assignable to type 'AvatarSize | undefined'.",
+              "line": 18
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'heading' is missing in type '{ children: string; }' but required in type 'SideNavHeadingProps'.",
+              "line": 23
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'title' is missing in type '{ children: Element[]; }' but required in type 'SideNavSectionProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 28
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 29
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'title' is missing in type '{ children: Element[]; }' but required in type 'SideNavSectionProps'.",
+              "line": 31
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 32
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 33
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 38,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.13636363636363635,
+            "decisionsPerElement": 0.4,
+            "elementCount": 15,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 30
+          }
+        }
+      },
+      "rc-1": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 17
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 20
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 26
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 36
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 17
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 20
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 23
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 34
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 35
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 36
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 7,
+            "logicLines": 37,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1590909090909091,
+            "decisionsPerElement": 0.1,
+            "elementCount": 14,
+            "stylingDecisionCount": 1,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 1,
+            "avgStateSpread": 31
+          }
+        }
+      },
+      "sd-7": {
+        "correctness": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"success\"; }' is not assignable to type 'IntrinsicAttributes & BadgeProps'.",
+              "line": 50
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 61,
+            "codeLines": 54,
+            "stylingLines": 2,
+            "boilerplateLines": 6,
+            "logicLines": 46,
+            "stylingRatio": 0.037037037037037035,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1,
+            "elementCount": 9,
+            "stylingDecisionCount": 9,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 39
+          }
+        }
+      },
+      "tc-1": {
+        "correctness": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; colorScheme: string; }' is not assignable to type 'IntrinsicAttributes & ThemeProps'.",
+              "line": 15
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "totalLines": 30,
+            "codeLines": 26,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 21,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.19230769230769232,
+            "decisionsPerElement": 0.7,
+            "elementCount": 3,
+            "stylingDecisionCount": 2,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 2,
+            "avgStateSpread": 11
+          }
+        }
+      },
+      "ty-8": {
+        "correctness": {
+          "score": 100,
+          "findings": []
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 90,
+          "findings": [],
+          "metrics": {
+            "totalLines": 25,
+            "codeLines": 23,
+            "stylingLines": 2,
+            "boilerplateLines": 4,
+            "logicLines": 17,
+            "stylingRatio": 0.08695652173913043,
+            "boilerplateRatio": 0.17391304347826086,
+            "decisionsPerElement": 1.6,
+            "elementCount": 10,
+            "stylingDecisionCount": 16,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 0
+          }
+        }
+      },
+      "wd-1": {
+        "correctness": {
+          "score": 100,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 50
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 66
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 60,
+          "findings": [],
+          "metrics": {
+            "totalLines": 84,
+            "codeLines": 75,
+            "stylingLines": 0,
+            "boilerplateLines": 75,
+            "logicLines": 0,
+            "stylingRatio": 0,
+            "boilerplateRatio": 1,
+            "decisionsPerElement": 0.8,
+            "elementCount": 33,
+            "stylingDecisionCount": 26,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 10,
+            "avgStateSpread": 47
+          }
+        }
+      }
+    },
+    "byCategory": {
+      "clone-with-modification": {
+        "correctness": 40,
+        "accessibility": 85,
+        "codeQuality": 97,
+        "efficiency": 91,
+        "maintainability": 100
+      },
+      "data-display": {
+        "correctness": 25,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 85,
+        "maintainability": 92
+      },
+      "feature-with-constraint": {
+        "correctness": 100,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 95,
+        "maintainability": 100
+      },
+      "integration-oriented": {
+        "correctness": 70,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 96,
+        "maintainability": 92
+      },
+      "page-setup": {
+        "correctness": 0,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 95,
+        "maintainability": 92
+      },
+      "responsive-context": {
+        "correctness": 0,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 94,
+        "maintainability": 92
+      },
+      "state-driven": {
+        "correctness": 85,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 94,
+        "maintainability": 92
+      },
+      "theme-customization": {
+        "correctness": 85,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 92,
+        "maintainability": 100
+      },
+      "typography": {
+        "correctness": 100,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 90,
+        "maintainability": 100
+      },
+      "workflow-description": {
+        "correctness": 100,
+        "accessibility": 100,
+        "codeQuality": 100,
+        "efficiency": 60,
+        "maintainability": 92
+      }
+    },
+    "darkModeRate": 0,
+    "cost": {
+      "totalDurationMs": 4700423,
+      "avgDurationMs": 470042,
+      "avgOutputChars": 1818,
+      "avgOutputLines": 52,
+      "avgDocsRead": 4.9,
+      "estimatedInputTokens": 34375,
+      "estimatedOutputTokens": 4544,
+      "byPrompt": {
+        "cwm-3": {
+          "durationMs": 470043,
+          "outputChars": 2169,
+          "outputLines": 69,
+          "docsRead": [
+            "Button",
+            "Popover",
+            "Text",
+            "TextInput"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 542
+        },
+        "dd-4": {
+          "durationMs": 470042,
+          "outputChars": 2740,
+          "outputLines": 69,
+          "docsRead": [
+            "TabList",
+            "Tab",
+            "Avatar",
+            "Text",
+            "Card",
+            "Badge",
+            "List",
+            "Switch"
+          ],
+          "estimatedInputTokens": 5375,
+          "estimatedOutputTokens": 685
+        },
+        "fwc-6": {
+          "durationMs": 470045,
+          "outputChars": 1027,
+          "outputLines": 37,
+          "docsRead": [
+            "RadioList",
+            "RadioListItem",
+            "Text"
+          ],
+          "estimatedInputTokens": 2250,
+          "estimatedOutputTokens": 257
+        },
+        "io-4": {
+          "durationMs": 470042,
+          "outputChars": 1285,
+          "outputLines": 49,
+          "docsRead": [
+            "NumberInput",
+            "IconButton",
+            "Text"
+          ],
+          "estimatedInputTokens": 2250,
+          "estimatedOutputTokens": 321
+        },
+        "ps-3": {
+          "durationMs": 470041,
+          "outputChars": 1940,
+          "outputLines": 47,
+          "docsRead": [
+            "AppShell",
+            "TopNav",
+            "SideNav",
+            "SideNavItem",
+            "Text",
+            "Avatar"
+          ],
+          "estimatedInputTokens": 4125,
+          "estimatedOutputTokens": 485
+        },
+        "rc-1": {
+          "durationMs": 470042,
+          "outputChars": 2096,
+          "outputLines": 47,
+          "docsRead": [
+            "AppShell",
+            "TopNav",
+            "MobileNav",
+            "SideNavItem",
+            "Text"
+          ],
+          "estimatedInputTokens": 3500,
+          "estimatedOutputTokens": 524
+        },
+        "sd-7": {
+          "durationMs": 470043,
+          "outputChars": 1849,
+          "outputLines": 61,
+          "docsRead": [
+            "FileInput",
+            "ProgressBar",
+            "Text",
+            "Badge",
+            "Card"
+          ],
+          "estimatedInputTokens": 3500,
+          "estimatedOutputTokens": 462
+        },
+        "tc-1": {
+          "durationMs": 470040,
+          "outputChars": 930,
+          "outputLines": 30,
+          "docsRead": [
+            "Switch",
+            "Theme",
+            "Text",
+            "Card"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 233
+        },
+        "ty-8": {
+          "durationMs": 470041,
+          "outputChars": 996,
+          "outputLines": 25,
+          "docsRead": [
+            "Avatar",
+            "Text",
+            "Card",
+            "Badge"
+          ],
+          "estimatedInputTokens": 2875,
+          "estimatedOutputTokens": 249
+        },
+        "wd-1": {
+          "durationMs": 470044,
+          "outputChars": 3143,
+          "outputLines": 84,
+          "docsRead": [
+            "Button",
+            "Card",
+            "Text",
+            "TextInput",
+            "RadioList",
+            "ProgressBar",
+            "Divider"
+          ],
+          "estimatedInputTokens": 4750,
+          "estimatedOutputTokens": 786
+        }
+      }
+    }
+  },
+  "winners": {
+    "correctness": "baseline",
+    "accessibility": "tie",
+    "codeQuality": "tie",
+    "efficiency": "astryx",
+    "maintainability": "tie"
+  },
+  "byPrompt": {
+    "cwm-3": {
+      "astryx": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 61
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Popover' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "click-non-interactive",
+              "severity": "critical",
+              "detail": "onClick on <span> without role=\"button\" or tabIndex",
+              "line": 52
+            }
+          ]
+        },
+        "codeQuality": {
+          "score": 97,
+          "findings": [
+            {
+              "rule": "index-key",
+              "severity": "minor",
+              "detail": "Array index as key",
+              "line": 35
+            }
+          ]
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 68,
+            "codeLines": 61,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 55,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.09836065573770492,
+            "decisionsPerElement": 0.4,
+            "elementCount": 14,
+            "stylingDecisionCount": 5,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 29
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 61
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; isOpen: boolean; onOpenChange: Dispatch<SetStateAction<boolean>>; trigger: Element; }' is not assignable to type 'IntrinsicAttributes & PopoverProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; variant: \"ghost\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; key: string; variant: \"ghost\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 34
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"ghost\"; size: \"sm\"; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.",
+              "line": 61
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "click-non-interactive",
+              "severity": "critical",
+              "detail": "onClick on <span> without role=\"button\" or tabIndex",
+              "line": 51
+            }
+          ]
+        },
+        "codeQuality": {
+          "score": 97,
+          "findings": [
+            {
+              "rule": "index-key",
+              "severity": "minor",
+              "detail": "Array index as key",
+              "line": 34
+            }
+          ]
+        },
+        "efficiency": {
+          "score": 91,
+          "findings": [],
+          "metrics": {
+            "totalLines": 69,
+            "codeLines": 62,
+            "stylingLines": 9,
+            "boilerplateLines": 5,
+            "logicLines": 48,
+            "stylingRatio": 0.14516129032258066,
+            "boilerplateRatio": 0.08064516129032258,
+            "decisionsPerElement": 2,
+            "elementCount": 15,
+            "stylingDecisionCount": 30,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 29
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "dd-4": {
+      "astryx": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 7
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/List' or its corresponding type declarations.",
+              "line": 8
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+              "line": 9
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+              "line": 10
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 87,
+          "findings": [
+            {
+              "rule": "duplicate-lines",
+              "severity": "moderate",
+              "detail": "Line repeated 3 times",
+              "count": 3,
+              "example": "{activeTab === \"_\" && ("
+            }
+          ],
+          "metrics": {
+            "totalLines": 66,
+            "codeLines": 59,
+            "stylingLines": 0,
+            "boilerplateLines": 10,
+            "logicLines": 49,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1694915254237288,
+            "decisionsPerElement": 0.5,
+            "elementCount": 28,
+            "stylingDecisionCount": 13,
+            "duplicateRatio": 0.05
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 10,
+            "avgStateSpread": 44
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"xl\"' is not assignable to type 'AvatarSize | undefined'.",
+              "line": 18
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"success\"; }' is not assignable to type 'IntrinsicAttributes & BadgeProps'.",
+              "line": 22
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 28
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; }' is not assignable to type 'IntrinsicAttributes & TabProps'.",
+              "line": 29
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "duplicate-lines",
+              "severity": "moderate",
+              "detail": "Line repeated 3 times",
+              "count": 3,
+              "example": "{activeTab === \"_\" && ("
+            }
+          ],
+          "metrics": {
+            "totalLines": 69,
+            "codeLines": 62,
+            "stylingLines": 6,
+            "boilerplateLines": 8,
+            "logicLines": 48,
+            "stylingRatio": 0.0967741935483871,
+            "boilerplateRatio": 0.12903225806451613,
+            "decisionsPerElement": 0.8,
+            "elementCount": 29,
+            "stylingDecisionCount": 24,
+            "duplicateRatio": 0.05
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 11,
+            "avgStateSpread": 47
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "fwc-6": {
+      "astryx": {
+        "correctness": {
+          "score": 70,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 3
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 35,
+            "codeLines": 32,
+            "stylingLines": 0,
+            "boilerplateLines": 3,
+            "logicLines": 29,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.09375,
+            "decisionsPerElement": 0.6,
+            "elementCount": 7,
+            "stylingDecisionCount": 4,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 4,
+            "avgStateSpread": 5
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 100,
+          "findings": []
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 37,
+            "codeLines": 34,
+            "stylingLines": 1,
+            "boilerplateLines": 3,
+            "logicLines": 30,
+            "stylingRatio": 0.029411764705882353,
+            "boilerplateRatio": 0.08823529411764706,
+            "decisionsPerElement": 0.9,
+            "elementCount": 8,
+            "stylingDecisionCount": 7,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 6
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "io-4": {
+      "astryx": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 40
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/NumberInput' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 49,
+            "codeLines": 45,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 40,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1.2,
+            "elementCount": 5,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 36
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 70,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 40
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"outlined\"' is not assignable to type 'keyof ButtonVariantMap | undefined'.",
+              "line": 21
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"outlined\"' is not assignable to type 'keyof ButtonVariantMap | undefined'.",
+              "line": 38
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 49,
+            "codeLines": 45,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 40,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1.2,
+            "elementCount": 5,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 36
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "ps-3": {
+      "astryx": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 29
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 32
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 38,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.13636363636363635,
+            "decisionsPerElement": 0.4,
+            "elementCount": 15,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 30
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 27
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 28
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 29
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 32
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '\"sm\"' is not assignable to type 'AvatarSize | undefined'.",
+              "line": 18
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'heading' is missing in type '{ children: string; }' but required in type 'SideNavHeadingProps'.",
+              "line": 23
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'title' is missing in type '{ children: Element[]; }' but required in type 'SideNavSectionProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 27
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 28
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 29
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2741: Property 'title' is missing in type '{ children: Element[]; }' but required in type 'SideNavSectionProps'.",
+              "line": 31
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 32
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 33
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 95,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 38,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.13636363636363635,
+            "decisionsPerElement": 0.4,
+            "elementCount": 15,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 5,
+            "avgStateSpread": 30
+          }
+        }
+      },
+      "winner": "astryx"
+    },
+    "rc-1": {
+      "astryx": {
+        "correctness": {
+          "score": 10,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 17
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 20
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 26
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 36
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/MobileNav' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 7
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 7,
+            "logicLines": 37,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1590909090909091,
+            "decisionsPerElement": 0.1,
+            "elementCount": 14,
+            "stylingDecisionCount": 1,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 1,
+            "avgStateSpread": 31
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 17
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 20
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 23
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 26
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 34
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 35
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 36
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 17
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 20
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 23
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; value: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TopNavItemProps'.",
+              "line": 26
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 33
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 34
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 35
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ label: string; isSelected: boolean; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & SideNavItemProps'.",
+              "line": 36
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 47,
+            "codeLines": 44,
+            "stylingLines": 0,
+            "boilerplateLines": 7,
+            "logicLines": 37,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1590909090909091,
+            "decisionsPerElement": 0.1,
+            "elementCount": 14,
+            "stylingDecisionCount": 1,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 1,
+            "avgStateSpread": 31
+          }
+        }
+      },
+      "winner": "astryx"
+    },
+    "sd-7": {
+      "astryx": {
+        "correctness": {
+          "score": 25,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/FileInput' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 6
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 96,
+          "findings": [],
+          "metrics": {
+            "totalLines": 68,
+            "codeLines": 60,
+            "stylingLines": 0,
+            "boilerplateLines": 6,
+            "logicLines": 54,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.1,
+            "decisionsPerElement": 0.7,
+            "elementCount": 9,
+            "stylingDecisionCount": 6,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 45
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: string; variant: \"success\"; }' is not assignable to type 'IntrinsicAttributes & BadgeProps'.",
+              "line": 50
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 61,
+            "codeLines": 54,
+            "stylingLines": 2,
+            "boilerplateLines": 6,
+            "logicLines": 46,
+            "stylingRatio": 0.037037037037037035,
+            "boilerplateRatio": 0.1111111111111111,
+            "decisionsPerElement": 1,
+            "elementCount": 9,
+            "stylingDecisionCount": 9,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 39
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "tc-1": {
+      "astryx": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/theme' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 5
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "totalLines": 30,
+            "codeLines": 26,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 21,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.19230769230769232,
+            "decisionsPerElement": 0.7,
+            "elementCount": 3,
+            "stylingDecisionCount": 2,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 2,
+            "avgStateSpread": 11
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 85,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2322: Type '{ children: Element; colorScheme: string; }' is not assignable to type 'IntrinsicAttributes & ThemeProps'.",
+              "line": 15
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "totalLines": 30,
+            "codeLines": 26,
+            "stylingLines": 0,
+            "boilerplateLines": 5,
+            "logicLines": 21,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.19230769230769232,
+            "decisionsPerElement": 0.7,
+            "elementCount": 3,
+            "stylingDecisionCount": 2,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 2,
+            "avgStateSpread": 11
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "ty-8": {
+      "astryx": {
+        "correctness": {
+          "score": 40,
+          "findings": [
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+              "line": 1
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+              "line": 4
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 94,
+          "findings": [],
+          "metrics": {
+            "totalLines": 33,
+            "codeLines": 27,
+            "stylingLines": 0,
+            "boilerplateLines": 4,
+            "logicLines": 23,
+            "stylingRatio": 0,
+            "boilerplateRatio": 0.14814814814814814,
+            "decisionsPerElement": 0.7,
+            "elementCount": 10,
+            "stylingDecisionCount": 7,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 6,
+            "avgStateSpread": 0
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 100,
+          "findings": []
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 90,
+          "findings": [],
+          "metrics": {
+            "totalLines": 25,
+            "codeLines": 23,
+            "stylingLines": 2,
+            "boilerplateLines": 4,
+            "logicLines": 17,
+            "stylingRatio": 0.08695652173913043,
+            "boilerplateRatio": 0.17391304347826086,
+            "decisionsPerElement": 1.6,
+            "elementCount": 10,
+            "stylingDecisionCount": 16,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 100,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 0
+          }
+        }
+      },
+      "winner": "baseline"
+    },
+    "wd-1": {
+      "astryx": {
+        "correctness": {
+          "score": 0,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 31
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 46
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 58
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+              "line": 2
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+              "line": 3
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+              "line": 4
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+              "line": 5
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+              "line": 6
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+              "line": 7
+            },
+            {
+              "rule": "type-error",
+              "severity": "critical",
+              "detail": "TS2307: Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+              "line": 8
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 60,
+          "findings": [],
+          "metrics": {
+            "totalLines": 73,
+            "codeLines": 64,
+            "stylingLines": 0,
+            "boilerplateLines": 64,
+            "logicLines": 0,
+            "stylingRatio": 0,
+            "boilerplateRatio": 1,
+            "decisionsPerElement": 0.3,
+            "elementCount": 28,
+            "stylingDecisionCount": 9,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 8,
+            "avgStateSpread": 40
+          }
+        }
+      },
+      "baseline": {
+        "correctness": {
+          "score": 100,
+          "findings": [
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 33
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 50
+            },
+            {
+              "rule": "phantom-prop",
+              "severity": "critical",
+              "detail": "onPress is React Native; use onClick for React DOM. Handler will never fire.",
+              "line": 66
+            }
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "findings": []
+        },
+        "codeQuality": {
+          "score": 100,
+          "findings": []
+        },
+        "efficiency": {
+          "score": 60,
+          "findings": [],
+          "metrics": {
+            "totalLines": 84,
+            "codeLines": 75,
+            "stylingLines": 0,
+            "boilerplateLines": 75,
+            "logicLines": 0,
+            "stylingRatio": 0,
+            "boilerplateRatio": 1,
+            "decisionsPerElement": 0.8,
+            "elementCount": 33,
+            "stylingDecisionCount": 26,
+            "duplicateRatio": 0
+          }
+        },
+        "maintainability": {
+          "score": 92,
+          "findings": [],
+          "metrics": {
+            "semanticRatio": 1,
+            "magicValueCount": 0,
+            "semanticValueCount": 10,
+            "avgStateSpread": 47
+          }
+        }
+      },
+      "winner": "baseline"
+    }
+  }
+}

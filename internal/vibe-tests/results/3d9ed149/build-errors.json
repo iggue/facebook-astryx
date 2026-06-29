@@ -1,0 +1,327 @@
+{
+  "cwm-3": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Popover' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 5,
+    "buildSuccess": false
+  },
+  "dd-4": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/TabList' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 7,
+        "message": "Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 8,
+        "message": "Cannot find module '@astryxdesign/core/List' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 9,
+        "message": "Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 10,
+        "message": "Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 9,
+    "buildSuccess": false
+  },
+  "fwc-6": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 2,
+    "buildSuccess": false
+  },
+  "io-4": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/NumberInput' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 4,
+    "buildSuccess": false
+  },
+  "ps-3": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 5,
+    "buildSuccess": false
+  },
+  "rc-1": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/AppShell' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/TopNav' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/SideNav' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/MobileNav' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/IconButton' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 7,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 6,
+    "buildSuccess": false
+  },
+  "sd-7": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/FileInput' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 5,
+    "buildSuccess": false
+  },
+  "tc-1": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/Switch' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/theme' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 4,
+    "buildSuccess": false
+  },
+  "ty-8": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 1,
+        "message": "Cannot find module '@astryxdesign/core/Avatar' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Badge' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 4,
+    "buildSuccess": false
+  },
+  "wd-1": {
+    "target": "xds",
+    "errors": [
+      {
+        "line": 2,
+        "message": "Cannot find module '@astryxdesign/core/Button' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 3,
+        "message": "Cannot find module '@astryxdesign/core/Card' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 4,
+        "message": "Cannot find module '@astryxdesign/core/Text' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 5,
+        "message": "Cannot find module '@astryxdesign/core/TextInput' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 6,
+        "message": "Cannot find module '@astryxdesign/core/RadioList' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 7,
+        "message": "Cannot find module '@astryxdesign/core/Divider' or its corresponding type declarations.",
+        "code": "TS2307"
+      },
+      {
+        "line": 8,
+        "message": "Cannot find module '@astryxdesign/core/ProgressBar' or its corresponding type declarations.",
+        "code": "TS2307"
+      }
+    ],
+    "errorCount": 7,
+    "buildSuccess": false
+  }
+}
