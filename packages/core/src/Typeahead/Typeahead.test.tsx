@@ -180,6 +180,90 @@ describe('BaseTypeahead', () => {
   });
 });
 
+describe('BaseTypeahead focus-out', () => {
+  it('closes the dropdown when focus leaves the input', async () => {
+    render(
+      <>
+        <BaseTypeahead
+          searchSource={fruitSource}
+          value={null}
+          onChange={() => {}}
+          debounceMs={0}
+        />
+        <button type="button">Outside</button>
+      </>,
+    );
+    const input = screen.getByRole('combobox');
+    fireEvent.change(input, {target: {value: 'App'}});
+
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    // Focus moves to an element outside the field/dropdown → menu closes.
+    const outside = screen.getByRole('button', {name: 'Outside'});
+    fireEvent.blur(input, {relatedTarget: outside});
+
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'false');
+    });
+  });
+
+  it('keeps the dropdown open when focus moves into the anchor wrapper', async () => {
+    const anchor = document.createElement('div');
+    document.body.appendChild(anchor);
+    const anchorRef = {current: anchor};
+    render(
+      <BaseTypeahead
+        searchSource={fruitSource}
+        value={null}
+        onChange={() => {}}
+        anchorRef={anchorRef}
+        debounceMs={0}
+      />,
+    );
+    const input = screen.getByRole('combobox');
+    // The input lives inside the wrapper we hand to anchorRef.
+    anchor.appendChild(input.closest('div') ?? input);
+    fireEvent.change(input, {target: {value: 'App'}});
+
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    // A sibling control inside the field (e.g. a clear button) receives focus.
+    const sibling = document.createElement('button');
+    anchor.appendChild(sibling);
+    fireEvent.blur(input, {relatedTarget: sibling});
+
+    // Menu stays open because focus is still within the field.
+    expect(input).toHaveAttribute('aria-expanded', 'true');
+    document.body.removeChild(anchor);
+  });
+
+  it('does not close when a dropdown option receives focus', async () => {
+    render(
+      <BaseTypeahead
+        searchSource={fruitSource}
+        value={null}
+        onChange={() => {}}
+        debounceMs={0}
+      />,
+    );
+    const input = screen.getByRole('combobox');
+    fireEvent.change(input, {target: {value: 'App'}});
+
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    const option = screen.getByRole('option', {hidden: true});
+    fireEvent.blur(input, {relatedTarget: option});
+
+    expect(input).toHaveAttribute('aria-expanded', 'true');
+  });
+});
+
 describe('Typeahead', () => {
   it('renders with label', () => {
     render(
