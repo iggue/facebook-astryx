@@ -1,0 +1,1 @@
+function a(n){let t=null;return()=>(t??={value:n()}).value}const i=a(()=>new Intl.NumberFormat(void 0,{notation:"compact",maximumFractionDigits:1}));function u(n="$"){return t=>{const o=Number(t);if(!Number.isFinite(o))return String(t);const c=o<0?"-":"",r=Math.abs(o),e=r>=1e3?i().format(r):r.toLocaleString();return`${c}${n}${e}`}}export{u as c};
