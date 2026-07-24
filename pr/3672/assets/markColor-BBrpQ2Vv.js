@@ -1,1 +1,0 @@
-import{D as o}from"./_data-xYQxt4mP.js";function r(n){return typeof n=="string"&&n.length>0}function i(n){return r(n._resolvedColor)?n._resolvedColor:o}function l(n,t){return r(t)?t:i(n)}function p(n,t,s,f){if(typeof t=="function"){const e=t(s,f);if(r(e))return e}else if(r(t))return t;return i(n)}export{p,l as s};
